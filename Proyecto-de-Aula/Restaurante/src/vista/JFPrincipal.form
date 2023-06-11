@@ -355,6 +355,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Registrar Plato"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbRegistrarPlatoMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

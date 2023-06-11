@@ -18,11 +18,15 @@ public class JFPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form JFPrincipal
      */
+    private JFRVenta venta;
+    private JFRPlato plato; 
     public JFPrincipal() {
         initComponents();
-//        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        
     }
     
     
@@ -176,6 +180,11 @@ public class JFPrincipal extends javax.swing.JFrame {
         lbRegistrarPlato.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         lbRegistrarPlato.setForeground(new java.awt.Color(0, 0, 0));
         lbRegistrarPlato.setText("Registrar Plato");
+        lbRegistrarPlato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbRegistrarPlatoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pRegistrarPlatoLayout = new javax.swing.GroupLayout(pRegistrarPlato);
         pRegistrarPlato.setLayout(pRegistrarPlatoLayout);
@@ -402,8 +411,13 @@ public class JFPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_pBuscarVentaMouseExited
 
     private void pRegistrarVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pRegistrarVentaMouseClicked
-        JOptionPane.showConfirmDialog(null, "Undeveloped Function", "Funciona",  JOptionPane.INFORMATION_MESSAGE);
+        this.venta = new JFRVenta();
+        
     }//GEN-LAST:event_pRegistrarVentaMouseClicked
+
+    private void lbRegistrarPlatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbRegistrarPlatoMouseClicked
+        this.plato = new JFRPlato();
+    }//GEN-LAST:event_lbRegistrarPlatoMouseClicked
 
     /**
      * @param args the command line arguments
