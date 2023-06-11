@@ -13,6 +13,7 @@ import persistencias.ArchivoVenta;
 import persistencias.Logica;
 
 public class JFBVenta extends javax.swing.JFrame {
+
     private Logica venta;
 
     public JFBVenta() {
@@ -22,10 +23,10 @@ public class JFBVenta extends javax.swing.JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
-    
-    public void iniciarPlato(Venta v) throws IOException{
+
+    public void iniciarPlato(Venta v) throws IOException {
         int i = 0;
-        for(Plato p : v.getPlatos()){
+        for (Plato p : v.getPlatos()) {
             TblPlato.setValueAt(p.getCodigo(), i, 0);
             TblPlato.setValueAt(p.getNombre(), i, 1);
             TblPlato.setValueAt(p.getPrecio(), i, 2);
@@ -392,26 +393,27 @@ public class JFBVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_jTFCodventaActionPerformed
 
     private void jBBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBBuscarMouseClicked
-        Venta v = (Venta) this.venta.buscarItem(this.jTFCodventa.getText());
-        if (v!= null){
-            this.jTFIdEmpleado.setText(String.valueOf(v.getEmpleado().getIdentificacion()));
-            this.jTFNombreEmpleado.setText(v.getEmpleado().getNombre());
-            this.jTFNombreCliente.setText(v.getCliente().getNombre());
-            this.jTFIdCliente.setText(String.valueOf(v.getCliente().getIdentificacion()));
-            try {
-                this.iniciarPlato(v);
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(this, ex);
+        if (!this.jTFCodventa.getText().isBlank()) {
+            Venta v = (Venta) this.venta.buscarItem(this.jTFCodventa.getText());
+            if (v != null) {
+                this.jTFIdEmpleado.setText(String.valueOf(v.getEmpleado().getIdentificacion()));
+                this.jTFNombreEmpleado.setText(v.getEmpleado().getNombre());
+                this.jTFNombreCliente.setText(v.getCliente().getNombre());
+                this.jTFIdCliente.setText(String.valueOf(v.getCliente().getIdentificacion()));
+                try {
+                    this.iniciarPlato(v);
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(this, ex);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "No encontrado", "Error", ERROR);
             }
-        }else{
-            JOptionPane.showMessageDialog(this, "No encontrado", "Error", ERROR);
         }
     }//GEN-LAST:event_jBBuscarMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TblPlato;
