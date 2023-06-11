@@ -175,10 +175,15 @@ public class JFRVenta extends javax.swing.JFrame {
         jTFFecha.setBackground(new java.awt.Color(255, 255, 255));
         jTFFecha.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         jTFFecha.setForeground(new java.awt.Color(51, 51, 51));
-        jTFFecha.setText("dd-mm-aaa");
+        jTFFecha.setText("dd/mm/aaaa");
         jTFFecha.setToolTipText("");
         jTFFecha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFFecha.setCaretColor(new java.awt.Color(0, 0, 0));
+        jTFFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFFechaActionPerformed(evt);
+            }
+        });
 
         jBGuardar.setBackground(new java.awt.Color(232, 112, 36));
         jBGuardar.setFont(new java.awt.Font("Lucida Console", 0, 12)); // NOI18N
@@ -463,7 +468,6 @@ public class JFRVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_jBaddPlatoMouseClicked
 
     private void jBGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBGuardarMouseClicked
-       JOptionPane.showMessageDialog(null, "Guardando Venta");
        ExceptionRestaurante excep = new ExceptionRestaurante();
         try {
             DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -479,13 +483,26 @@ public class JFRVenta extends javax.swing.JFrame {
             v.setFechaVenta(fecha);
             v.setCliente(c);
             venta.agregarItem(v);
+            JOptionPane.showMessageDialog(null, "Guardando Venta");
+            this.limpiar();
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, ex);
+        }catch(java.time.format.DateTimeParseException ex){
+            JOptionPane.showMessageDialog(this, "Formato de la Fecha no es valido(dd/mm/aaaa)");
         }
     }//GEN-LAST:event_jBGuardarMouseClicked
 
+    public void limpiar(){
+        this.jTFEmail.setText("");
+        this.jTFIdCliente.setText("");
+        this.jTFIdEmpleado.setText("");
+        this.jTFNombreCliente.setText("");
+        this.jTFNombreEmpleado.setText("");
+        this.jLBValortotal.setText("");
+    }
     private void jBCandelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBCandelarMouseClicked
        JOptionPane.showMessageDialog(null, "Cancelando Venta");
+       this.limpiar();
     }//GEN-LAST:event_jBCandelarMouseClicked
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
@@ -495,6 +512,10 @@ public class JFRVenta extends javax.swing.JFrame {
     private void jBCandelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCandelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBCandelarActionPerformed
+
+    private void jTFFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFFechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFFechaActionPerformed
      public Font font = new Font("Lucida Console", Font.BOLD, 18);
     public Font font2 = new Font("Lucida Console", Font.PLAIN, 18);
     /**
