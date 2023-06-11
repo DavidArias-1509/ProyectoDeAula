@@ -4,6 +4,7 @@ import cuentas.Plato;
 import cuentas.Venta;
 import empleados.Cliente;
 import empleados.Empleado;
+import excepciones.ExceptionRestaurante;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
@@ -463,19 +464,21 @@ public class JFRVenta extends javax.swing.JFrame {
 
     private void jBGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBGuardarMouseClicked
        JOptionPane.showMessageDialog(null, "Guardando Venta");
-       DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-       LocalDate fecha = LocalDate.parse(this.jTFFecha.getText(), formato);
-       Long idEmple = Long.parseLong(this.jTFIdEmpleado.getText());
-       String nomEmple = this.jTFNombreEmpleado.getText();
-       Long idClien = Long.parseLong(this.jTFIdCliente.getText());
-       String nomClien = this.jTFNombreCliente.getText();
-       String email = this.jTFEmail.getText();
-       Empleado e = new Empleado(nomEmple,idEmple);
-       Cliente c = new Cliente(email,nomClien,idClien);
-       v.setEmpleado(e);
-       v.setFechaVenta(fecha);
-       v.setCliente(c);
+       ExceptionRestaurante excep = new ExceptionRestaurante();
+       
         try {
+            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate fecha = LocalDate.parse(excep.espaciosEnBlancos(this.jTFFecha.getText()), formato);
+            Long idEmple = Long.parseLong(excep.espaciosEnBlancos(this.jTFIdEmpleado.getText()));
+            String nomEmple = excep.espaciosEnBlancos(this.jTFNombreEmpleado.getText());
+            Long idClien = Long.parseLong(excep.espaciosEnBlancos(this.jTFIdCliente.getText()));
+            String nomClien = excep.espaciosEnBlancos(this.jTFNombreCliente.getText());
+            String email = excep.espaciosEnBlancos(this.jTFEmail.getText());
+            Empleado e = new Empleado(nomEmple,idEmple);
+            Cliente c = new Cliente(email,nomClien,idClien);
+            v.setEmpleado(e);
+            v.setFechaVenta(fecha);
+            v.setCliente(c);
             venta.agregarItem(v);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, ex);

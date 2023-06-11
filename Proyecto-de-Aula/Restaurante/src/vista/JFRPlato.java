@@ -5,6 +5,7 @@
 package vista;
 
 import cuentas.Plato;
+import excepciones.ExceptionRestaurante;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
@@ -303,8 +304,9 @@ public class JFRPlato extends javax.swing.JFrame {
 
     private void jButtonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGuardarMouseClicked
         JOptionPane.showMessageDialog(null, "Guardando Plato");
-        Plato p = new Plato(jTFnombrePlato.getText(),Double.parseDouble(jTFPrecioPlato.getText()));
+        ExceptionRestaurante excep = new ExceptionRestaurante();
         try {
+            Plato p = new Plato(excep.espaciosEnBlancos(jTFnombrePlato.getText()),Double.parseDouble(excep.espaciosEnBlancos(jTFPrecioPlato.getText())));
             this.plato.agregarItem(p);
             this.iniciarPlato();
         } catch (IOException ex) {
