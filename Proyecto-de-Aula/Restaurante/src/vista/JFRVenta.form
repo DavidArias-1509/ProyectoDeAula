@@ -56,7 +56,7 @@
                               <Component id="lbtt3" min="-2" max="-2" attributes="0"/>
                               <Component id="lbtt1" min="-2" pref="301" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="248" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jPanel1" max="32767" attributes="0"/>
                   </Group>
@@ -540,6 +540,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="__________"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">

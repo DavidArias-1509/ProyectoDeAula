@@ -190,6 +190,7 @@ public class JFRVenta extends javax.swing.JFrame {
 
         jTFNombreEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         jTFNombreEmpleado.setForeground(new java.awt.Color(51, 51, 51));
+        jTFNombreEmpleado.setText("__________");
         jTFNombreEmpleado.setToolTipText("");
         jTFNombreEmpleado.setBorder(new javax.swing.border.MatteBorder(null));
         jTFNombreEmpleado.setCaretColor(new java.awt.Color(0, 0, 0));
@@ -350,7 +351,7 @@ public class JFRVenta extends javax.swing.JFrame {
                             .addComponent(lbtt2)
                             .addComponent(lbtt3)
                             .addComponent(lbtt1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
+                        .addContainerGap(248, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
