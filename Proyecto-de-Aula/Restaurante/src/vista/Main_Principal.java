@@ -8,6 +8,5 @@ public class Main_Principal {
     
     public static void main(String[] args) {
         JFLogIn login = new JFLogIn();
-//        JFPrincipal window = new JFPrincipal();
     }
 }

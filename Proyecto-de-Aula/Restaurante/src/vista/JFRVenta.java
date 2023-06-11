@@ -482,6 +482,7 @@ public class JFRVenta extends javax.swing.JFrame {
             v.setEmpleado(e);
             v.setFechaVenta(fecha);
             v.setCliente(c);
+            this.jTFCodVenta.setText(Double.toString(v.calcularValorVenta()));
             venta.agregarItem(v);
             JOptionPane.showMessageDialog(null, "Guardando Venta");
             this.limpiar();
