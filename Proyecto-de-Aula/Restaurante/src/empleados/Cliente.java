@@ -4,11 +4,13 @@
  */
 package empleados;
 
+import java.io.Serializable;
+
 /**
  *
  * @author karla
  */
-public class Cliente extends Persona {
+public class Cliente extends Persona implements Serializable {
     
     private String email;
     

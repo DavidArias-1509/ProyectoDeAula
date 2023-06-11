@@ -1,9 +1,14 @@
 package vista;
 
 import cuentas.Plato;
+import cuentas.Venta;
+import empleados.Cliente;
+import empleados.Empleado;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -17,9 +22,10 @@ public class JFRVenta extends javax.swing.JFrame {
     private Logica plato;
     private Logica venta;
     private JFRPlato rPlato;
-
+    private Venta v;
     public JFRVenta() {
         initComponents();
+        this.v = new Venta();
         this.plato= new ArchivoPlato();
         this.venta = new ArchivoVenta();
         this.setVisible(true);
@@ -201,6 +207,7 @@ public class JFRVenta extends javax.swing.JFrame {
             }
         });
 
+        jTFCodVenta.setEditable(false);
         jTFCodVenta.setBackground(new java.awt.Color(255, 255, 255));
         jTFCodVenta.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         jTFCodVenta.setForeground(new java.awt.Color(51, 51, 51));
@@ -208,6 +215,7 @@ public class JFRVenta extends javax.swing.JFrame {
         jTFCodVenta.setToolTipText("");
         jTFCodVenta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFCodVenta.setCaretColor(new java.awt.Color(0, 0, 0));
+        jTFCodVenta.setEnabled(false);
 
         jTFIdEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         jTFIdEmpleado.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
@@ -447,11 +455,31 @@ public class JFRVenta extends javax.swing.JFrame {
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(this, ex);
             }
+        }else{
+            this.v.addPlato(p);
+            this.jLBValortotal.setText(String.valueOf(v.calcularValorVenta()));
         }
     }//GEN-LAST:event_jBaddPlatoMouseClicked
 
     private void jBGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBGuardarMouseClicked
        JOptionPane.showMessageDialog(null, "Guardando Venta");
+       DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+       LocalDate fecha = LocalDate.parse(this.jTFFecha.getText(), formato);
+       Long idEmple = Long.parseLong(this.jTFIdEmpleado.getText());
+       String nomEmple = this.jTFNombreEmpleado.getText();
+       Long idClien = Long.parseLong(this.jTFIdCliente.getText());
+       String nomClien = this.jTFNombreCliente.getText();
+       String email = this.jTFEmail.getText();
+       Empleado e = new Empleado(nomEmple,idEmple);
+       Cliente c = new Cliente(email,nomClien,idClien);
+       v.setEmpleado(e);
+       v.setFechaVenta(fecha);
+       v.setCliente(c);
+        try {
+            venta.agregarItem(v);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, ex);
+        }
     }//GEN-LAST:event_jBGuardarMouseClicked
 
     private void jBCandelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBCandelarMouseClicked

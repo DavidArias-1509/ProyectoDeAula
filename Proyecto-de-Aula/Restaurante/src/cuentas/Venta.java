@@ -1,10 +1,13 @@
 package cuentas;
 
+import empleados.Cliente;
+import empleados.Empleado;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import empleados.Persona;
+import java.io.Serializable;
 
-public class Venta {
+public class Venta implements Serializable{
     private String codigoVenta;
     private ArrayList<Plato> platos;
     private LocalDate fechaVenta;
@@ -12,11 +15,17 @@ public class Venta {
     private Persona cliente;
     private double precioVenta;
 
+    public Venta() {
+        this(LocalDate.now(),new Empleado("",0L),new Cliente("","",0));
+    }
+  
+    
     public Venta(LocalDate fechaVenta, Persona empleado, Persona cliente) {
+        this.platos = new ArrayList();
         this.fechaVenta = fechaVenta;
         this.empleado = empleado;
         this.cliente = cliente;
-        this.codigoVenta = this.fechaVenta.toString() + String.valueOf((int)(this.precioVenta/3));
+        this.codigoVenta = this.fechaVenta.toString() + "-" + String.valueOf((int)(this.precioVenta/6));
     }
 
     /**
@@ -40,11 +49,8 @@ public class Venta {
         return platos;
     }
 
-    /**
-     * @param platos the platos to set
-     */
-    public void setPlatos(ArrayList<Plato> platos) {
-        this.platos = platos;
+    public void addPlato(Plato p){
+        this.platos.add(p);
     }
 
     /**
@@ -89,6 +95,10 @@ public class Venta {
         this.precioVenta = precioVenta;
     }
     
+    public void actualizarCodigo(){
+        this.codigoVenta = this.fechaVenta.toString() + "-" + String.valueOf((int)(this.precioVenta/6));
+    }
+    
     public double calcularValorVenta(){
         this.precioVenta=0;
         for (Plato p : this.platos){
@@ -96,5 +106,19 @@ public class Venta {
         }
         this.codigoVenta = this.fechaVenta.toString() + String.valueOf((int)(this.precioVenta/3));
         return this.precioVenta;
+    }
+
+    /**
+     * @return the cliente
+     */
+    public Persona getCliente() {
+        return cliente;
+    }
+
+    /**
+     * @param cliente the cliente to set
+     */
+    public void setCliente(Persona cliente) {
+        this.cliente = cliente;
     }
 }

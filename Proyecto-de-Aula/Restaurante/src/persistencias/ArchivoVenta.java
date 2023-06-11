@@ -37,7 +37,7 @@ public class ArchivoVenta extends Archivo {
                this.aLectura = new ObjectInputStream(new FileInputStream(this.arch));
                this.list = (ListaVenta) this.aLectura.readObject();
             }catch(IOException ex){
-                throw new IOException("Archivo no entocntrado");
+                throw new IOException("Archivo no entcontrado: "+ex);
             } catch (ClassNotFoundException ex) {
                 throw new IOException("No se encontro elementos");
             }finally{
