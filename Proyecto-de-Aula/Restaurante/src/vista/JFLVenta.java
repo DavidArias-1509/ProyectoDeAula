@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import persistencias.ArchivoVenta;
 import persistencias.Logica;
@@ -15,6 +16,9 @@ public class JFLVenta extends javax.swing.JFrame {
     public JFLVenta() throws IOException {
         initComponents();
         this.iniciarVenta();
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setLocationRelativeTo(null);
     }
     
     public void iniciarVenta() throws IOException{

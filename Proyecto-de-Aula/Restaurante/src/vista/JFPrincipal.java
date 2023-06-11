@@ -6,6 +6,9 @@ package vista;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -20,6 +23,8 @@ public class JFPrincipal extends javax.swing.JFrame {
      */
     private JFRVenta venta;
     private JFRPlato plato; 
+    private JFLPlato lPlato;
+    private JFLVenta lVenta;
     public JFPrincipal() {
         initComponents();
         //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -111,6 +116,11 @@ public class JFPrincipal extends javax.swing.JFrame {
         lbListaPlatos.setForeground(java.awt.Color.black);
         lbListaPlatos.setText("Ver Lista de Platos");
         lbListaPlatos.setPreferredSize(new java.awt.Dimension(119, 38));
+        lbListaPlatos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbListaPlatosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pListaPlatosLayout = new javax.swing.GroupLayout(pListaPlatos);
         pListaPlatos.setLayout(pListaPlatosLayout);
@@ -218,6 +228,11 @@ public class JFPrincipal extends javax.swing.JFrame {
         lbListaVentas.setForeground(java.awt.Color.black);
         lbListaVentas.setText("Ver Lista de Ventas");
         lbListaVentas.setPreferredSize(new java.awt.Dimension(119, 38));
+        lbListaVentas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbListaVentasMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pListaVentasLayout = new javax.swing.GroupLayout(pListaVentas);
         pListaVentas.setLayout(pListaVentasLayout);
@@ -418,6 +433,22 @@ public class JFPrincipal extends javax.swing.JFrame {
     private void lbRegistrarPlatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbRegistrarPlatoMouseClicked
         this.plato = new JFRPlato();
     }//GEN-LAST:event_lbRegistrarPlatoMouseClicked
+
+    private void lbListaPlatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbListaPlatosMouseClicked
+        try {
+            this.lPlato = new JFLPlato();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, ex, "Error", ERROR);
+        }
+    }//GEN-LAST:event_lbListaPlatosMouseClicked
+
+    private void lbListaVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbListaVentasMouseClicked
+        try {
+            this.lVenta = new JFLVenta();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, ex, "Error", ERROR);
+        }
+    }//GEN-LAST:event_lbListaVentasMouseClicked
 
     /**
      * @param args the command line arguments

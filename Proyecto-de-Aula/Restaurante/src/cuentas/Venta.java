@@ -18,9 +18,6 @@ public class Venta {
         this.empleado = empleado;
         this.cliente = cliente;
     }
-    
-
-    
 
     /**
      * @return the codigoVenta
@@ -92,5 +89,11 @@ public class Venta {
         this.precioVenta = precioVenta;
     }
     
-    
+    public double calcularVelorVenta(){
+        this.precioVenta=0;
+        for (Plato p : this.platos){
+            this.precioVenta += p.getPrecio();
+        }
+        return this.precioVenta;
+    }
 }

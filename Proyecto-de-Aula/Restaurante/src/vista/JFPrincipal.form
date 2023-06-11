@@ -249,6 +249,9 @@
                       <Dimension value="[119, 38]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbListaPlatosMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -408,6 +411,9 @@
                       <Dimension value="[119, 38]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbListaVentasMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

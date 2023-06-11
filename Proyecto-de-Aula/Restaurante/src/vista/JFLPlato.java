@@ -7,6 +7,7 @@ import java.awt.Font;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import persistencias.ArchivoPlato;
 import persistencias.ArchivoVenta;
@@ -17,6 +18,9 @@ public class JFLPlato extends javax.swing.JFrame {
     public JFLPlato() throws IOException {
         initComponents();
         this.iniciarPlato();
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setLocationRelativeTo(null);
     }
     
     public void iniciarPlato() throws IOException{
