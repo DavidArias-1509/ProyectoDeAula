@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import empleados.Persona;
 import java.io.Serializable;
+import java.util.Random;
 
 public class Venta implements Serializable{
     private String codigoVenta;
@@ -25,7 +26,7 @@ public class Venta implements Serializable{
         this.fechaVenta = fechaVenta;
         this.empleado = empleado;
         this.cliente = cliente;
-        this.codigoVenta = this.fechaVenta.toString() + "-" + String.valueOf((int)(this.precioVenta/6));
+        this.codigoVenta = "0";
     }
 
     /**
@@ -96,7 +97,9 @@ public class Venta implements Serializable{
     }
     
     public void actualizarCodigo(){
-        this.codigoVenta = this.fechaVenta.toString() + "-" + String.valueOf((int)(this.precioVenta/6));
+        Random ran = new Random();
+        int var = ran.nextInt(10);
+        this.codigoVenta = this.fechaVenta.toString() + "-" + String.valueOf((int)((this.precioVenta*var)/60));
     }
     
     public double calcularValorVenta(){
@@ -104,7 +107,7 @@ public class Venta implements Serializable{
         for (Plato p : this.platos){
             this.precioVenta += p.getPrecio();
         }
-        this.codigoVenta = this.fechaVenta.toString() + String.valueOf((int)(this.precioVenta/3));
+        this.actualizarCodigo();
         return this.precioVenta;
     }
 
