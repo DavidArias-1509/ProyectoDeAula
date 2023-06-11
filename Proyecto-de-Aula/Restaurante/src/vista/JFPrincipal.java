@@ -128,14 +128,14 @@ public class JFPrincipal extends javax.swing.JFrame {
             pListaPlatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pListaPlatosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbListaPlatos, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lbListaPlatos, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(332, Short.MAX_VALUE))
         );
         pListaPlatosLayout.setVerticalGroup(
             pListaPlatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pListaPlatosLayout.createSequentialGroup()
-                .addComponent(lbListaPlatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pListaPlatosLayout.createSequentialGroup()
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(lbListaPlatos, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pRegistrarVenta.setBackground(new java.awt.Color(255, 255, 255));
@@ -169,16 +169,19 @@ public class JFPrincipal extends javax.swing.JFrame {
         );
         pRegistrarVentaLayout.setVerticalGroup(
             pRegistrarVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pRegistrarVentaLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pRegistrarVentaLayout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addComponent(lbRegistrarVenta)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pRegistrarPlato.setBackground(new java.awt.Color(255, 255, 255));
         pRegistrarPlato.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pRegistrarPlato.setPreferredSize(new java.awt.Dimension(119, 38));
         pRegistrarPlato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pRegistrarPlatoMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 pRegistrarPlatoMouseEntered(evt);
             }
@@ -190,11 +193,6 @@ public class JFPrincipal extends javax.swing.JFrame {
         lbRegistrarPlato.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         lbRegistrarPlato.setForeground(new java.awt.Color(0, 0, 0));
         lbRegistrarPlato.setText("Registrar Plato");
-        lbRegistrarPlato.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbRegistrarPlatoMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout pRegistrarPlatoLayout = new javax.swing.GroupLayout(pRegistrarPlato);
         pRegistrarPlato.setLayout(pRegistrarPlatoLayout);
@@ -210,7 +208,7 @@ public class JFPrincipal extends javax.swing.JFrame {
             .addGroup(pRegistrarPlatoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbRegistrarPlato)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pListaVentas.setBackground(new java.awt.Color(255, 255, 255));
@@ -240,14 +238,15 @@ public class JFPrincipal extends javax.swing.JFrame {
             pListaVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pListaVentasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbListaVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(299, Short.MAX_VALUE))
+                .addComponent(lbListaVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pListaVentasLayout.setVerticalGroup(
             pListaVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pListaVentasLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(lbListaVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pBuscarVenta.setBackground(new java.awt.Color(255, 255, 255));
@@ -275,42 +274,47 @@ public class JFPrincipal extends javax.swing.JFrame {
         pBuscarVenta.setLayout(pBuscarVentaLayout);
         pBuscarVentaLayout.setHorizontalGroup(
             pBuscarVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pBuscarVentaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbBuscarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(pBuscarVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pBuscarVentaLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lbBuscarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(409, Short.MAX_VALUE)))
         );
         pBuscarVentaLayout.setVerticalGroup(
             pBuscarVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pBuscarVentaLayout.createSequentialGroup()
-                .addComponent(lbBuscarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(pBuscarVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pBuscarVentaLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lbBuscarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pRegistrarVenta, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
-            .addComponent(pRegistrarPlato, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
+            .addComponent(pRegistrarVenta, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+            .addComponent(pRegistrarPlato, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
             .addComponent(pListaPlatos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pListaVentas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pBuscarVenta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pBuscarVenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pListaVentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pRegistrarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pRegistrarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pRegistrarPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pRegistrarPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pListaPlatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pListaVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pListaVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pBuscarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(434, Short.MAX_VALUE))
         );
 
         lbtt1.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
@@ -327,36 +331,39 @@ public class JFPrincipal extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
+                        .addGap(27, 27, 27)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbtt1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbtt2))
-                        .addContainerGap(247, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(lbtt2)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(10, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(lbtt1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbtt2)
+                        .addGap(13, 13, 13)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(lbtt1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbtt2)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,14 +442,6 @@ public class JFPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_pRegistrarVentaMouseClicked
 
-    private void lbRegistrarPlatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbRegistrarPlatoMouseClicked
-        try {
-            this.plato = new JFRPlato();
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(this, ex,"Error",ERROR);
-        }
-    }//GEN-LAST:event_lbRegistrarPlatoMouseClicked
-
     private void lbListaPlatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbListaPlatosMouseClicked
         try {
             this.lPlato = new JFLPlato();
@@ -462,6 +461,14 @@ public class JFPrincipal extends javax.swing.JFrame {
     private void lbBuscarVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBuscarVentaMouseClicked
         this.bVenta = new JFBVenta();
     }//GEN-LAST:event_lbBuscarVentaMouseClicked
+
+    private void pRegistrarPlatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pRegistrarPlatoMouseClicked
+       try {
+            this.plato = new JFRPlato();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, ex,"Error",ERROR);
+        }
+    }//GEN-LAST:event_pRegistrarPlatoMouseClicked
 
     /**
      * @param args the command line arguments
