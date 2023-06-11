@@ -175,7 +175,7 @@ public class JFRVenta extends javax.swing.JFrame {
         jTFFecha.setBackground(new java.awt.Color(255, 255, 255));
         jTFFecha.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         jTFFecha.setForeground(new java.awt.Color(51, 51, 51));
-        jTFFecha.setText("dd-mm-aaa");
+        jTFFecha.setText("dd/mm/aaaa");
         jTFFecha.setToolTipText("");
         jTFFecha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFFecha.setCaretColor(new java.awt.Color(0, 0, 0));
@@ -478,6 +478,7 @@ public class JFRVenta extends javax.swing.JFrame {
             v.setEmpleado(e);
             v.setFechaVenta(fecha);
             v.setCliente(c);
+            this.jTFCodVenta.setText(Double.toString(v.calcularValorVenta()));
             venta.agregarItem(v);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, ex);
