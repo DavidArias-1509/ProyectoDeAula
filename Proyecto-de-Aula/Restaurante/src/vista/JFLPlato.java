@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import persistencias.ArchivoPlato;
 import persistencias.ArchivoVenta;
 import persistencias.Logica;
@@ -24,14 +25,16 @@ public class JFLPlato extends javax.swing.JFrame {
     }
     
     public void iniciarPlato() throws IOException{
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Co. de Plato");
+        model.addColumn("Nombre");
+        model.addColumn("Precio de plato");
         Logica plato = new ArchivoPlato();
         List<Plato> list = plato.generarInforme();
-        int i = 0;
-        for(Plato p : list){
-            TblPlato.setValueAt(p.getCodigo(), i, 0);
-            TblPlato.setValueAt(p.getNombre(), i, 1);
-            TblPlato.setValueAt(p.getPrecio(), i, 2);
-            i++;
+        TblPlato.setModel(model);
+        for(Plato v : list){
+            model.addRow(new Object[]{v.getCodigo(),v.getNombre(),v.getPrecio()});
+            
         }
     }
 

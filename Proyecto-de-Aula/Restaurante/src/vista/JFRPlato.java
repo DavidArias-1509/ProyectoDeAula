@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import persistencias.ArchivoPlato;
 import persistencias.Logica;
 
@@ -36,16 +37,18 @@ public class JFRPlato extends javax.swing.JFrame {
     }
     
     public void iniciarPlato() throws IOException{
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Co. de Plato");
+        model.addColumn("Nombre");
+        model.addColumn("Precio de plato");
         Logica plato = new ArchivoPlato();
         List<Plato> list = plato.generarInforme();
-        int i = 0;
-        for(Plato p : list){
-            TblRegistro.setValueAt(p.getCodigo(), i, 0);
-            TblRegistro.setValueAt(p.getNombre(), i, 1);
-            TblRegistro.setValueAt(p.getPrecio(), i, 2);
-            i++;
+        TblRegistro.setModel(model);
+        for(Plato v : list){
+            model.addRow(new Object[]{v.getCodigo(),v.getNombre(),v.getPrecio()});
         }
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

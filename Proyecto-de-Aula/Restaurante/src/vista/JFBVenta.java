@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import persistencias.ArchivoPlato;
 import persistencias.ArchivoVenta;
 import persistencias.Logica;
@@ -25,12 +26,14 @@ public class JFBVenta extends javax.swing.JFrame {
     }
 
     public void iniciarPlato(Venta v) throws IOException {
-        int i = 0;
-        for (Plato p : v.getPlatos()) {
-            TblPlato.setValueAt(p.getCodigo(), i, 0);
-            TblPlato.setValueAt(p.getNombre(), i, 1);
-            TblPlato.setValueAt(p.getPrecio(), i, 2);
-            i++;
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Co. de Plato");
+        model.addColumn("Nombre");
+        model.addColumn("Precio de plato");
+        TblPlato.setModel(model);
+        for(Plato v1 : v.getPlatos()){
+            model.addRow(new Object[]{v1.getCodigo(),v1.getNombre(),v1.getPrecio()});
+            
         }
     }
 

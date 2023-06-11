@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import empleados.Persona;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Random;
 
 public class Venta implements Serializable{
@@ -97,9 +98,14 @@ public class Venta implements Serializable{
     }
     
     public void actualizarCodigo(){
-        Random ran = new Random();
-        int var = ran.nextInt(10);
-        this.codigoVenta = this.fechaVenta.toString() + "-" + String.valueOf((int)((this.precioVenta*var)/60));
+        LocalDateTime cod = LocalDateTime.now();
+        this.codigoVenta = String.format("%02d%02d%02d%02d%02d%02d",
+                cod.getDayOfMonth(),
+                cod.getMonthValue(),
+                cod.getYear() % 100, // Obtener solo los últimos dos dígitos del año
+                cod.getHour(),
+                cod.getMinute(),
+                cod.getSecond());
     }
     
     public double calcularValorVenta(){

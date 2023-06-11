@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import persistencias.ArchivoVenta;
 import persistencias.Logica;
 
@@ -22,14 +23,16 @@ public class JFLVenta extends javax.swing.JFrame {
     }
     
     public void iniciarVenta() throws IOException{
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Co. de Venta");
+        model.addColumn("Valor Venta");
+        model.addColumn("Fecha de venta");
         Logica venta = new ArchivoVenta();
         List<Venta> list = venta.generarInforme();
-        int i = 0;
+        TblVenta.setModel(model);
         for(Venta v : list){
-            TblVenta.setValueAt(v.getCodigoVenta(), i, 0);
-            TblVenta.setValueAt(v.getPrecioVenta(), i, 1);
-            TblVenta.setValueAt(v.getFechaVenta(), i, 2);
-            i++;
+            model.addRow(new Object[]{v.getCodigoVenta(),v.getPrecioVenta(),v.getFechaVenta()});
+            
         }
     }
 
@@ -92,12 +95,21 @@ public class JFLVenta extends javax.swing.JFrame {
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
+                {null, null, null},
                 {null, null, null}
             },
             new String [] {
                 "Co. de Venta", "Valor Venta", "Fecha Venta"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(TblVenta);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
