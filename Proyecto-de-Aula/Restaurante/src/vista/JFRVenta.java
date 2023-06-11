@@ -465,7 +465,6 @@ public class JFRVenta extends javax.swing.JFrame {
     private void jBGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBGuardarMouseClicked
        JOptionPane.showMessageDialog(null, "Guardando Venta");
        ExceptionRestaurante excep = new ExceptionRestaurante();
-       
         try {
             DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             LocalDate fecha = LocalDate.parse(excep.espaciosEnBlancos(this.jTFFecha.getText()), formato);

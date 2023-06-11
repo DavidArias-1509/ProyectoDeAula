@@ -13,6 +13,9 @@ import java.io.IOException;
 public class ExceptionRestaurante {
     
     public String espaciosEnBlancos(String text) throws IOException{
+        
+        text = text.replaceAll("\\s+", " ").trim();
+        
         if (text.equals("")){
             throw new IOException("Espacio en blanco");
         }
