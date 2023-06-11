@@ -303,12 +303,13 @@ public class JFRPlato extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGuardarMouseClicked
-        JOptionPane.showMessageDialog(null, "Guardando Plato");
+        
         ExceptionRestaurante excep = new ExceptionRestaurante();
         try {
             Plato p = new Plato(excep.espaciosEnBlancos(jTFnombrePlato.getText()),Double.parseDouble(excep.espaciosEnBlancos(jTFPrecioPlato.getText())));
             this.plato.agregarItem(p);
             this.iniciarPlato();
+            JOptionPane.showMessageDialog(null, "Guardando Plato");
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, ex,"Error",ERROR);
         }
