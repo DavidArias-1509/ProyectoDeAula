@@ -1,8 +1,8 @@
 package empleados;
 
 public abstract class Persona {
-        private String nombre;
-        private long identificacion;
+    private String nombre;
+    private long identificacion;
 
     public Persona(String nombre, long identificacion) {
         this.nombre = nombre;
@@ -24,11 +24,4 @@ public abstract class Persona {
     public void setIdentificacion(long identificacion) {
         this.identificacion = identificacion;
     }
-      
-  public abstract double calcularSalario();
-  
-        @Override
-  public String toString(){
-      return "Nombre: "+this.nombre+"\nId: "+this.identificacion;
-  }
 }
