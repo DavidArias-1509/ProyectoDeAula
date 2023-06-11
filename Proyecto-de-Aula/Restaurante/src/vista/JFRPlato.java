@@ -37,11 +37,11 @@ public class JFRPlato extends javax.swing.JFrame {
     public void iniciarPlato() throws IOException{
         Logica plato = new ArchivoPlato();
         List<Plato> list = plato.generarInforme();
-        int i = 1;
+        int i = 0;
         for(Plato p : list){
-            TblRegistro.setValueAt(p.getCodigo(), i, 1);
-            TblRegistro.setValueAt(p.getNombre(), i, 2);
-            TblRegistro.setValueAt(p.getPrecio(), i, 3);
+            TblRegistro.setValueAt(p.getCodigo(), i, 0);
+            TblRegistro.setValueAt(p.getNombre(), i, 1);
+            TblRegistro.setValueAt(p.getPrecio(), i, 2);
             i++;
         }
     }
@@ -306,6 +306,7 @@ public class JFRPlato extends javax.swing.JFrame {
         Plato p = new Plato(jTFnombrePlato.getText(),Double.parseDouble(jTFPrecioPlato.getText()));
         try {
             this.plato.agregarItem(p);
+            this.iniciarPlato();
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, ex,"Error",ERROR);
         }
