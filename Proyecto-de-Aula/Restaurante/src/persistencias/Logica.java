@@ -15,8 +15,8 @@ import java.util.List;
 public interface Logica{
     String DIREC ="src/archivo/";
     
-    Object buscarItem(String id);
-    void borrarItem(String id) throws IOException;
+    Object buscarItem(String code);
+    void borrarItem(String code) throws IOException;
 
     /**
      *

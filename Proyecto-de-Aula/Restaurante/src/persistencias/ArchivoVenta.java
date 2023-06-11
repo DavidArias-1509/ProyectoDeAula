@@ -4,7 +4,7 @@
  */
 package persistencias;
 
-import cuentas.Plato;
+import cuentas.Venta;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,28 +14,28 @@ import java.util.List;
 
 /**
  *
- * @author karla
+ * @author steban
  */
-public class ArchivoPlato extends Archivo {
+public class ArchivoVenta extends Archivo {
     
-    private ListaPlato list;
+    private ListaVenta list;
     
-    public ArchivoPlato() {
-        this("Plato.obj");
+    public ArchivoVenta() {
+        this("Venta.obj");
     }
-    
-    public ArchivoPlato(String name) {
+
+    public ArchivoVenta(String name) {
         super(name);
     }
-    
-    public void leerListaPlato() throws IOException{
+
+    public void leerListaVenta() throws IOException{
         if(!this.arch.exists()){
-            this.list = new ListaPlato();
+            this.list = new ListaVenta();
         }else{
             this.aLectura=null;
             try{
                this.aLectura = new ObjectInputStream(new FileInputStream(this.arch));
-               this.list = (ListaPlato) this.aLectura.readObject();
+               this.list = (ListaVenta) this.aLectura.readObject();
             }catch(IOException ex){
                 throw new IOException("Archivo no entocntrado");
             } catch (ClassNotFoundException ex) {
@@ -63,9 +63,9 @@ public class ArchivoPlato extends Archivo {
     }
     
     @Override
-    public Plato buscarItem(String id) {
+    public Venta buscarItem(String id) {
         try {
-            this.leerListaPlato();
+            this.leerListaVenta();
             return this.list.buscarItem(id);
         } catch (IOException ex) {
             System.err.println("Erro: "+ ex);
@@ -75,22 +75,21 @@ public class ArchivoPlato extends Archivo {
 
     @Override
     public void borrarItem(String id) throws IOException {
-        this.leerListaPlato();
+        this.leerListaVenta();
         this.list.borrarItem(id);
         this.guardarLista();
     }
 
     @Override
     public void agregarItem(Object item) throws IOException {
-        this.leerListaPlato();
+        this.leerListaVenta();
         this.list.agregarItem(item);
         this.guardarLista();
     }
 
     @Override
-    public List<Plato> generarInforme() throws IOException {
-       this.leerListaPlato();
+    public List<Venta> generarInforme() throws IOException {
+       this.leerListaVenta();
        return this.list.generarInforme();
     }
-    
 }

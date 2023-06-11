@@ -10,8 +10,24 @@ package empleados;
  */
 public class Cliente extends Persona {
     
-    public Cliente(String nombre, long identificacion) {
-        super(nombre, identificacion);
-    }
+    private String email;
     
+    public Cliente(String email, String nombre, long identificacion) {
+        super(nombre, identificacion);
+        this.email = email;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }    
 }
