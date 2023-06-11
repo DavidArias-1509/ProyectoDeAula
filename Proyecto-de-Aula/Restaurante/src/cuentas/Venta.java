@@ -3,11 +3,8 @@ package cuentas;
 import java.time.LocalDate;
 import modelos.Entrada;
 import java.util.ArrayList;
-import static modelos.Entrada.leerFecha;
 import empleados.Empleado;
 import preparaciones.Receta;
-import static vista.Main_Principal.*;
-
 
 public class Venta {
     private String codigoVenta;
@@ -17,28 +14,11 @@ public class Venta {
     private Cliente cliente;
     private double precioVenta;
 
-    public Venta( Empleado empleado, Cliente cliente) {
-        char encontro = 'n';
-        int secuencia = 1;
-        this.platos = new ArrayList();
-        this.cliente = cliente;
+    public Venta(Empleado empleado, Cliente cliente) {
         this.empleado = empleado;
-        this.fechaVenta = LocalDate.now();
-        for(Dia d: mes.getDias()){
-            if(d.getFecha().equals(this.fechaVenta )){
-                encontro = 's';
-                secuencia = d.getVentas().size()+1;
-                break;
-            }
-        }
-        if (encontro == 'n'){
-            Dia d1 = new Dia();
-            mes.agregarDia(d1);
-        }
-        this.codigoVenta = ""+ this.fechaVenta.getYear() + this.fechaVenta.getMonthValue() + this.fechaVenta.getDayOfMonth() + secuencia + "";
-        this.precioVenta = 0;
+        this.cliente = cliente;
     }
-
+    
     public ArrayList<Receta> getPlatos() {
         return platos;
     }
@@ -74,78 +54,6 @@ public class Venta {
     
     public void realizarVenta(){
         this.calcularPrecio();
-        for(Dia d: mes.getDias()){
-            if(this.fechaVenta.equals(d.getFecha())){
-                d.agregarVenta(this);
-            }
-        }
-    }
-    
-    public static void RegistroVenta(){
-        char encontro = 'n';
-        LocalDate fecha = pedirFecha();
-        encontro='n';
-        System.out.println("Empleado");
-        System.out.println("----------------------------");
-        long id = Entrada.leerLong("Identificacion: ");
-        Empleado e1=null;
-        for (Empleado e: personal){            
-            if(e.getIdentificacion() == id){
-                encontro = 's';
-                e1 = e;
-                System.out.println("Nombre: "+ e.getNombre());
-                break;
-            }
-        }
-        if(encontro == 'n'){
-            System.out.println("No se encontro empleado intente otra vez");
-        }else{
-            System.out.println("------------------------");
-            System.out.println("Cliente");
-            id = Entrada.leerLong("Identificacion: ");
-            
-            String nombre = Entrada.leerString("Nombre: ");
-            String Email = Entrada.leerString("Email: ");
-            Cliente c1 = new Cliente(nombre, Email, id);
-            Venta v = new Venta(e1,c1);
-            System.out.println("------------------------");
-            System.out.println("Platos");
-            for(Receta r : libroReceta){
-                System.out.println(r.getNombre());
-            }
-            char op='s';
-            do{
-                encontro = 'n';
-                System.out.println("------------------------");
-                String plato = Entrada.leerString("Nombre del plato: ");
-                Receta r1= null;
-                for(Receta r : libroReceta){
-                    if(r.getNombre().equals(plato)){
-                        encontro = 's';
-                        r1 = r;
-                    }
-                }
-                if(encontro == 'n'){
-                    op = Entrada.leerCaracter("No se encontro plato");
-
-                }else{
-                    System.out.println("Se agrego plato");
-                    v.agregarPlato(r1);
-                }
-                op = Entrada.leerCaracter("Desea finalizar (S/N): ");
-            }while(op =='N'|| op =='n');
-            op = Entrada.leerCaracter("Desea Guardar Venta (S/N)");
-            if (op == 'n'|| op=='N'){
-                for(Dia d : mes.getDias()){
-                    if (d.getFecha().equals(fecha)){
-                        d.agregarVenta(v);
-                        System.out.println("Total venta: " + v.calcularPrecio());
-                        break;
-                    }
-                }
-            }
-            
-        }
     }
 
     public String getCodigoVenta() {

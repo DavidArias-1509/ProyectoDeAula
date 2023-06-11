@@ -9,8 +9,6 @@ import empleados.Empleado;
 import java.io.IOException;
 import java.io.Serializable;
 import persistencias.*;
-import static vista.Main_Principal.pedirFecha;
-import static vista.Main_Principal.personal;
 
 public class Compra implements Serializable{
    private String codigoCompra;
@@ -98,75 +96,6 @@ public class Compra implements Serializable{
         d.agregarCompra(this);
         mes.agregarItem(d);
     }
-
-    public static void RegistroCompra() throws IOException{
-        if(validacion()){
-            int opc = 0;
-            System.out.println("rRegistro de Compra");
-            System.out.println("---------------------------");
-            System.out.println("1. Compra de Ingredientes");
-            System.out.println("2. Otras Compras");
-            do{
-                opc = Entrada.leerEntero("Elija Opcion enttre (1-2)");
-            }while ((opc < 1 || opc >2));
-            
-            char encontro = 'n';
-            LocalDate fecha = pedirFecha();
-            Compra c = new Compra(fecha);
-            encontro='n';
-            char op = 'n';
-            String desc = "";
-            double precio = 0;
-            int cantidad = 0;
-            do{
-                if(opc==1){
-                    desc = Entrada.leerString("Ingrediente: ");
-                }else{
-                    desc = Entrada.leerString("Descripcion: ");
-                }
-                cantidad = Entrada.leerEntero("Cantidad: ");
-                precio = Entrada.leerDouble("Precio Por Unidad");
-                op = Entrada.leerCaracter("Desea gregar otro plato (S/N)");
-            }while(op == 'S' || op== 's');
-            op = Entrada.leerCaracter("Desea realizar compra (S/N)");
-            if(opc==1){
-                c.agregaACarrito(desc, cantidad, precio, "");
-            }else{
-                c.agregaACarrito(desc, cantidad, precio, desc);
-            }
-            if(op == 'n' || op== 'N'){
-                c.realizarCompra();
-            }
-        }
-    }
-    
-    
-    public static boolean validacion(){//Validacion de usuario administrador
-        boolean bol = false;
-        System.out.println("Registro de compra");
-        System.out.println("-------------------------");
-        long usuario = Entrada.leerLong("Usuario(123) : ");
-        long Contrasena = Entrada.leerLong("Contrasena (1234) : ");
-        if(usuario == 123L && Contrasena == 1234L){
-            bol = true;
-        }else{
-            for(Empleado e : personal){
-                if(usuario == e.getIdentificacion() && (e instanceof Administrador)){
-                    if(Contrasena == e.getIdentificacion()){
-                       bol = true;
-                    }else{
-                        System.out.println("Error en contraseña...");
-                        bol = false;
-                    }
-                }
-            }
-        }
-        if(!bol){
-            System.out.println("Acceso no permitido");
-        }
-       return bol;
-    }
-
 
     public String getCodigoCompra() {
         return codigoCompra;

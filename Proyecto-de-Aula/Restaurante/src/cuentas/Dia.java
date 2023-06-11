@@ -6,7 +6,6 @@ import modelos.Entrada;
 import empleados.Empleado;
 import empleados.Normal;
 import java.io.Serializable;
-import static vista.Main_Principal.pedirFecha;
 
 public class Dia implements Serializable{
     private ArrayList<Venta> ventas;
@@ -70,52 +69,6 @@ public class Dia implements Serializable{
     public void agregarVenta(Venta v){
         this.ventas.add(v);
         System.out.println("Venta registrada");
-    }
-    
-    public static void registarAsistencia(){
-        if(Compra.validacion()){
-            char encontro = 'n';
-            LocalDate fecha = pedirFecha();
-            char op = 'n' ;
-            long id =0L;
-            Dia d = new Dia(fecha);
-            do{
-                id = Entrada.leerLong("Indentificacion: ");
-                encontro = 'n';
-                Empleado e = new Normal(0,0,"",0);
-                for(Empleado e1 : d.getAsistencia()){
-                    if(e1.getIdentificacion() == e.getIdentificacion()){
-                        System.out.println("Asistencia ya fue registrada");
-                        e = e1;
-                        encontro = 's';
-                    }
-                }
-                if(encontro == 'n'){
-                    if (e instanceof Normal normal){
-                        normal.setDiasTrabajados(1);
-                        e= normal;
-                    }
-                    d.setAsistencia(e);
-                    System.out.println("Asistencia registrada");
-                }
-                op = Entrada.leerCaracter("Desea agregar otra asistencia: ");
-            }while(op == 'n'||op == 'N');
-        }
-       
-    }
-    
-//    @Override
-//    public double calcularBalance() {
-//       double balance=0;
-//        for(Venta v : this.ventas){
-//            this.balanceVenta += v.calcularPrecio();
-//        }
-//        balance += this.balanceVenta; 
-//        for(Compra c: this.compras){
-//            this.balanceCompra+=c.getValorTotal();
-//        }
-//        System.out.println("Gastos en Compras: "+this.balanceCompra);
-//        balance -= this.balanceCompra;
-//       return balance; 
-//    }
+    }       
 }
+    
