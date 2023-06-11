@@ -1,9 +1,14 @@
 package vista;
 
+import javax.swing.JFrame;
+
 public class JFBVenta extends javax.swing.JFrame {
 
     public JFBVenta() {
         initComponents();
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setLocationRelativeTo(null);
     }
 
     /**

@@ -4,23 +4,46 @@
  */
 package vista;
 
+import cuentas.Plato;
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import persistencias.ArchivoPlato;
+import persistencias.Logica;
 
 /**
  *
  * @author david
  */
 public class JFRPlato extends javax.swing.JFrame {
+    
+    private ArchivoPlato plato;
 
     /**
      * Creates new form JFRPlato
      */
-    public JFRPlato() {
+    public JFRPlato() throws IOException {
         initComponents();
+        this.plato = new ArchivoPlato();
+        this.iniciarPlato();
         this.setVisible(true);
-         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
+    }
+    
+    public void iniciarPlato() throws IOException{
+        Logica plato = new ArchivoPlato();
+        List<Plato> list = plato.generarInforme();
+        int i = 1;
+        for(Plato p : list){
+            TblRegistro.setValueAt(p.getCodigo(), i, 1);
+            TblRegistro.setValueAt(p.getNombre(), i, 2);
+            TblRegistro.setValueAt(p.getPrecio(), i, 3);
+            i++;
+        }
     }
 
     /**
@@ -38,7 +61,7 @@ public class JFRPlato extends javax.swing.JFrame {
         lbtt3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableListaPlatos = new javax.swing.JTable();
+        TblRegistro = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTFnombrePlato = new javax.swing.JTextField();
@@ -72,8 +95,8 @@ public class JFRPlato extends javax.swing.JFrame {
 
         jScrollPane1.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTableListaPlatos.setBackground(new java.awt.Color(255, 255, 255));
-        jTableListaPlatos.setModel(new javax.swing.table.DefaultTableModel(
+        TblRegistro.setBackground(new java.awt.Color(255, 255, 255));
+        TblRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -92,11 +115,11 @@ public class JFRPlato extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTableListaPlatos);
-        if (jTableListaPlatos.getColumnModel().getColumnCount() > 0) {
-            jTableListaPlatos.getColumnModel().getColumn(0).setResizable(false);
-            jTableListaPlatos.getColumnModel().getColumn(1).setResizable(false);
-            jTableListaPlatos.getColumnModel().getColumn(2).setResizable(false);
+        jScrollPane1.setViewportView(TblRegistro);
+        if (TblRegistro.getColumnModel().getColumnCount() > 0) {
+            TblRegistro.getColumnModel().getColumn(0).setResizable(false);
+            TblRegistro.getColumnModel().getColumn(1).setResizable(false);
+            TblRegistro.getColumnModel().getColumn(2).setResizable(false);
         }
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -280,10 +303,18 @@ public class JFRPlato extends javax.swing.JFrame {
 
     private void jButtonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGuardarMouseClicked
         JOptionPane.showMessageDialog(null, "Guardando Plato");
+        Plato p = new Plato(jTFnombrePlato.getText(),Double.parseDouble(jTFPrecioPlato.getText()));
+        try {
+            this.plato.agregarItem(p);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, ex,"Error",ERROR);
+        }
     }//GEN-LAST:event_jButtonGuardarMouseClicked
 
     private void jButtonCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCancelarMouseClicked
         JOptionPane.showMessageDialog(null, "Cancelando Registro");
+        jTFPrecioPlato.setText("");
+        jTFnombrePlato.setText("");
     }//GEN-LAST:event_jButtonCancelarMouseClicked
 
     /**
@@ -292,6 +323,7 @@ public class JFRPlato extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TblRegistro;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonGuardar;
     private javax.swing.JLabel jLabel1;
@@ -304,7 +336,6 @@ public class JFRPlato extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTFPrecioPlato;
     private javax.swing.JTextField jTFnombrePlato;
-    private javax.swing.JTable jTableListaPlatos;
     private javax.swing.JLabel lbImg;
     private javax.swing.JLabel lbNombre;
     private javax.swing.JLabel lbtt1;

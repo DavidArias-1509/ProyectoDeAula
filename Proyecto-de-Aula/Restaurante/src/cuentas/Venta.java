@@ -17,6 +17,7 @@ public class Venta {
         this.fechaVenta = fechaVenta;
         this.empleado = empleado;
         this.cliente = cliente;
+        this.codigoVenta = this.fechaVenta.toString() + String.valueOf((int)(this.precioVenta/3));
     }
 
     /**
@@ -89,11 +90,12 @@ public class Venta {
         this.precioVenta = precioVenta;
     }
     
-    public double calcularVelorVenta(){
+    public double calcularValorVenta(){
         this.precioVenta=0;
         for (Plato p : this.platos){
             this.precioVenta += p.getPrecio();
         }
+        this.codigoVenta = this.fechaVenta.toString() + String.valueOf((int)(this.precioVenta/3));
         return this.precioVenta;
     }
 }

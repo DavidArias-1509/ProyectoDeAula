@@ -25,13 +25,13 @@ public class JFPrincipal extends javax.swing.JFrame {
     private JFRPlato plato; 
     private JFLPlato lPlato;
     private JFLVenta lVenta;
+    private JFBVenta bVenta;
     public JFPrincipal() {
         initComponents();
         //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        
     }
     
     
@@ -265,6 +265,11 @@ public class JFPrincipal extends javax.swing.JFrame {
         lbBuscarVenta.setForeground(java.awt.Color.black);
         lbBuscarVenta.setText("Buscar Venta");
         lbBuscarVenta.setPreferredSize(new java.awt.Dimension(119, 38));
+        lbBuscarVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbBuscarVentaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pBuscarVentaLayout = new javax.swing.GroupLayout(pBuscarVenta);
         pBuscarVenta.setLayout(pBuscarVentaLayout);
@@ -431,7 +436,11 @@ public class JFPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_pRegistrarVentaMouseClicked
 
     private void lbRegistrarPlatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbRegistrarPlatoMouseClicked
-        this.plato = new JFRPlato();
+        try {
+            this.plato = new JFRPlato();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, ex,"Error",ERROR);
+        }
     }//GEN-LAST:event_lbRegistrarPlatoMouseClicked
 
     private void lbListaPlatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbListaPlatosMouseClicked
@@ -449,6 +458,10 @@ public class JFPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, ex, "Error", ERROR);
         }
     }//GEN-LAST:event_lbListaVentasMouseClicked
+
+    private void lbBuscarVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbBuscarVentaMouseClicked
+        this.bVenta = new JFBVenta();
+    }//GEN-LAST:event_lbBuscarVentaMouseClicked
 
     /**
      * @param args the command line arguments

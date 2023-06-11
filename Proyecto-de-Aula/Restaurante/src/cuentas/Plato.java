@@ -18,6 +18,7 @@ public class Plato implements Serializable{
     public Plato(String nombre, double precio) {
         this.nombre = nombre;
         this.precio = precio;
+        this.Codigo = this.nombre.charAt(0) + String.valueOf((int)(this.precio/3));
     }
 
     /**

@@ -464,6 +464,9 @@
                       <Dimension value="[119, 38]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbBuscarVentaMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
