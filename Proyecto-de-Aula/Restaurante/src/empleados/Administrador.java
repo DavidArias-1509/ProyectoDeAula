@@ -35,15 +35,4 @@ public  class Administrador extends Persona{
     public void setBonificacion(double bonificacion) {
         this.bonificacion = bonificacion;
     }
-
-    @Override
-    public double calcularSalario() {
-    return this.salarioBase+this.auxilios+this.bonificacion;
-    }
-    
-    @Override
-    public String toString(){
-        return super.toString()+"\nAdministrador \nSalario base: "+this.salarioBase+"\nAuxilios: "+this.auxilios+
-                "\nBonificacion: "+this.bonificacion+"\nSalario Final: "+this.calcularSalario()+"\n*********************";
-    }
 }

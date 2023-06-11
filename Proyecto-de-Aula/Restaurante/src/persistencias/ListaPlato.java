@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  *
- * @author karla
+ * @author steban
  */
 public class ListaPlato implements Logica , Serializable{
     
@@ -24,22 +24,37 @@ public class ListaPlato implements Logica , Serializable{
     }
 
     @Override
-    public Object buscarItem(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Plato buscarItem(String code) {
+        for(Plato p : this.plato){
+            if(p.getCodigo().equals(code)){
+                return p;
+            }
+        }
+        return null;
     }
 
     @Override
-    public void borrarItem(String id) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void borrarItem(String code) throws IOException {
+        for(Plato p : this.plato){
+            if(p.getCodigo().equals(code)){
+                this.plato.remove(p);
+            }
+        }
     }
 
     @Override
     public void agregarItem(Object item) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Plato p = (Plato) item;
+        for(Plato p1 : this.plato){
+            if(p1.getCodigo().equals(p.getCodigo())){
+                throw new IOException("Item ya existe Existe");
+            }
+        }
+        this.plato.add(p);
     }
 
     @Override
-    public List generarInforme() throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<Plato> generarInforme() throws IOException {
+        return this.plato;
     }
 }

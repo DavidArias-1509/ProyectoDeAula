@@ -10,11 +10,17 @@ public class Venta {
     private ArrayList<Plato> platos;
     private LocalDate fechaVenta;
     private Persona empleado;
+    private Persona cliente;
     private double precioVenta;
 
-    public Venta() {
-        
+    public Venta(LocalDate fechaVenta, Persona empleado, Persona cliente) {
+        this.fechaVenta = fechaVenta;
+        this.empleado = empleado;
+        this.cliente = cliente;
     }
+    
+
+    
 
     /**
      * @return the codigoVenta

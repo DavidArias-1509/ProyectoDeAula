@@ -1,18 +1,18 @@
 package empleados;
 
-public class Normal extends Persona{
+public class Empleado extends Persona{
     private double pagoPorDia;
     private double bonificacion;
     private int diasTrabajados;
 
-//    public Normal(double pagoPorDia, double bonificacion, int diasTrabajados, String nombre, long identificacion) {
+//    public Empleado(double pagoPorDia, double bonificacion, int diasTrabajados, String nombre, long identificacion) {
 //        super(nombre, identificacion);
 //        this.pagoPorDia = pagoPorDia;
 //        this.bonificacion = bonificacion;
 //        this.diasTrabajados = diasTrabajados =0;
 //    }
 
-    public Normal(double pagoPorDia, double bonificacion, String nombre, long identificacion) {
+    public Empleado(double pagoPorDia, double bonificacion, String nombre, long identificacion) {
         super(nombre, identificacion);
         this.pagoPorDia = pagoPorDia;
         this.bonificacion = bonificacion;
@@ -41,16 +41,5 @@ public class Normal extends Persona{
 
     public void setDiasTrabajados(int diasTrabajados) {
         this.diasTrabajados = diasTrabajados;
-    }
-    
-    @Override
-    public double calcularSalario() {
-        return (this.diasTrabajados*this.pagoPorDia)+this.bonificacion;    
-    }
-    
-    @Override
-    public String toString(){
-        return super.toString()+"\nEmpleado Normal \nPago por dia: "+this.pagoPorDia+"\nDias trabajados: "+this.diasTrabajados+
-                "\nBonificacion: "+this.bonificacion+"\nSalario Final: "+this.calcularSalario()+"\n*********************";
     }
 }
