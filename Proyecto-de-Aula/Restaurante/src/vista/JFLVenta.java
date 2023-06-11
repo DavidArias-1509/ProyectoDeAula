@@ -24,11 +24,11 @@ public class JFLVenta extends javax.swing.JFrame {
     public void iniciarVenta() throws IOException{
         Logica venta = new ArchivoVenta();
         List<Venta> list = venta.generarInforme();
-        int i = 1;
+        int i = 0;
         for(Venta v : list){
-            TblVenta.setValueAt(v.getCodigoVenta(), i, 1);
-            TblVenta.setValueAt(v.getPrecioVenta(), i, 2);
-            TblVenta.setValueAt(v.getFechaVenta(), i, 3);
+            TblVenta.setValueAt(v.getCodigoVenta(), i, 0);
+            TblVenta.setValueAt(v.getPrecioVenta(), i, 1);
+            TblVenta.setValueAt(v.getFechaVenta(), i, 2);
             i++;
         }
     }

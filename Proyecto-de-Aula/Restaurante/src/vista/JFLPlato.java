@@ -26,11 +26,11 @@ public class JFLPlato extends javax.swing.JFrame {
     public void iniciarPlato() throws IOException{
         Logica plato = new ArchivoPlato();
         List<Plato> list = plato.generarInforme();
-        int i = 1;
+        int i = 0;
         for(Plato p : list){
-            TblPlato.setValueAt(p.getCodigo(), i, 1);
-            TblPlato.setValueAt(p.getNombre(), i, 2);
-            TblPlato.setValueAt(p.getPrecio(), i, 3);
+            TblPlato.setValueAt(p.getCodigo(), i, 0);
+            TblPlato.setValueAt(p.getNombre(), i, 1);
+            TblPlato.setValueAt(p.getPrecio(), i, 2);
             i++;
         }
     }
