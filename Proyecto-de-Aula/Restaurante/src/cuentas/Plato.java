@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @author karla
  */
 public class Plato implements Serializable{
-    private String Codigo;
+    private String codigo;
     private String nombre;
     private double precio;
 
@@ -22,17 +22,17 @@ public class Plato implements Serializable{
     }
 
     /**
-     * @return the Codigo
+     * @return the codigo
      */
     public String getCodigo() {
-        return Codigo;
+        return codigo;
     }
 
     /**
-     * @param Codigo the Codigo to set
+     * @param Codigo the codigo to set
      */
     public void setCodigo(String Codigo) {
-        this.Codigo = Codigo;
+        this.codigo = Codigo;
     }
 
     /**

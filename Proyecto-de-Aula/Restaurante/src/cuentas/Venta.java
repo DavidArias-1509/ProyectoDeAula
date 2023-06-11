@@ -1,7 +1,6 @@
 package cuentas;
 
 import java.time.LocalDate;
-import modelos.Entrada;
 import java.util.ArrayList;
 import empleados.Persona;
 
