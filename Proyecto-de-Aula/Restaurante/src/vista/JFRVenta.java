@@ -32,7 +32,6 @@ public class JFRVenta extends javax.swing.JFrame {
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
-       
     }
 
     @SuppressWarnings("unchecked")
@@ -482,7 +481,7 @@ public class JFRVenta extends javax.swing.JFrame {
             v.setEmpleado(e);
             v.setFechaVenta(fecha);
             v.setCliente(c);
-            this.jTFCodVenta.setText(Double.toString(v.calcularValorVenta()));
+            this.jTFCodVenta.setText(v.getCodigoVenta());
             venta.agregarItem(v);
             JOptionPane.showMessageDialog(null, "Guardando Venta");
             this.limpiar();
