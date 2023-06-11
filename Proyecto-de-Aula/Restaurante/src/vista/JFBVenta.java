@@ -393,7 +393,7 @@ public class JFBVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_jTFCodventaActionPerformed
 
     private void jBBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBBuscarMouseClicked
-            Venta v = (Venta) this.venta.buscarItem(this.jTFCodventa.getText());
+        Venta v = (Venta) this.venta.buscarItem(this.jTFCodventa.getText());
             if (v != null) {
                 this.jTFIdEmpleado.setText(String.valueOf(v.getEmpleado().getIdentificacion()));
                 this.jTFNombreEmpleado.setText(v.getEmpleado().getNombre());
@@ -407,8 +407,9 @@ public class JFBVenta extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, "No encontrado", "Error", ERROR);
             }
+            
     }//GEN-LAST:event_jBBuscarMouseClicked
-
+    
     /**
      * @param args the command line arguments
      */
