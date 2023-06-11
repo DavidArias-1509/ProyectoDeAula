@@ -6,6 +6,7 @@ package persistencias;
 
 import cuentas.Venta;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  *
  * @author karla
  */
-public class ListaVenta implements Logica{
+public class ListaVenta implements Logica, Serializable{
     
     private List<Venta> venta ;
 
