@@ -3,13 +3,13 @@ package cuentas;
 import java.time.LocalDate;
 import modelos.Entrada;
 import java.util.ArrayList;
-import empleados.Empleado;
+import empleados.Persona;
 
 public class Venta {
     private String codigoVenta;
     private ArrayList<Plato> platos;
     private LocalDate fechaVenta;
-    private Empleado empleado;
+    private Persona empleado;
     private double precioVenta;
 
     public Venta() {
@@ -61,14 +61,14 @@ public class Venta {
     /**
      * @return the empleado
      */
-    public Empleado getEmpleado() {
+    public Persona getEmpleado() {
         return empleado;
     }
 
     /**
      * @param empleado the empleado to set
      */
-    public void setEmpleado(Empleado empleado) {
+    public void setEmpleado(Persona empleado) {
         this.empleado = empleado;
     }
 
