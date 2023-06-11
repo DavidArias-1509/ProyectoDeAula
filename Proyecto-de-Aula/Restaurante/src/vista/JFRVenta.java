@@ -146,7 +146,7 @@ public class JFRVenta extends javax.swing.JFrame {
         jTFFecha.setForeground(new java.awt.Color(51, 51, 51));
         jTFFecha.setText("dd-mm-aaa");
         jTFFecha.setToolTipText("");
-        jTFFecha.setBorder(new javax.swing.border.MatteBorder(null));
+        jTFFecha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFFecha.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jBGuardar.setBackground(new java.awt.Color(232, 112, 36));
@@ -179,39 +179,39 @@ public class JFRVenta extends javax.swing.JFrame {
         jTFCodVenta.setForeground(new java.awt.Color(51, 51, 51));
         jTFCodVenta.setText("0");
         jTFCodVenta.setToolTipText("");
-        jTFCodVenta.setBorder(new javax.swing.border.MatteBorder(null));
+        jTFCodVenta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFCodVenta.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jTFIdEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         jTFIdEmpleado.setForeground(new java.awt.Color(51, 51, 51));
         jTFIdEmpleado.setToolTipText("");
-        jTFIdEmpleado.setBorder(new javax.swing.border.MatteBorder(null));
+        jTFIdEmpleado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFIdEmpleado.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jTFNombreEmpleado.setBackground(new java.awt.Color(255, 255, 255));
         jTFNombreEmpleado.setForeground(new java.awt.Color(51, 51, 51));
         jTFNombreEmpleado.setText("__________");
         jTFNombreEmpleado.setToolTipText("");
-        jTFNombreEmpleado.setBorder(new javax.swing.border.MatteBorder(null));
+        jTFNombreEmpleado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFNombreEmpleado.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jTFIdCliente.setBackground(new java.awt.Color(255, 255, 255));
         jTFIdCliente.setForeground(new java.awt.Color(51, 51, 51));
         jTFIdCliente.setToolTipText("");
-        jTFIdCliente.setBorder(new javax.swing.border.MatteBorder(null));
+        jTFIdCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFIdCliente.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jTFNombreCliente.setBackground(new java.awt.Color(255, 255, 255));
         jTFNombreCliente.setForeground(new java.awt.Color(51, 51, 51));
         jTFNombreCliente.setToolTipText("");
-        jTFNombreCliente.setBorder(new javax.swing.border.MatteBorder(null));
+        jTFNombreCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFNombreCliente.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jTFEmail.setBackground(new java.awt.Color(255, 255, 255));
         jTFEmail.setForeground(new java.awt.Color(51, 51, 51));
         jTFEmail.setText("example@mail.com");
         jTFEmail.setToolTipText("");
-        jTFEmail.setBorder(new javax.swing.border.MatteBorder(null));
+        jTFEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFEmail.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jLBValortotal.setForeground(new java.awt.Color(0, 0, 0));
