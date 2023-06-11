@@ -19,6 +19,10 @@ public class JFLVenta extends javax.swing.JFrame {
         lbNombre = new javax.swing.JLabel();
         lbImg = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        lbtt4 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         lbtt1 = new javax.swing.JLabel();
         lbtt2 = new javax.swing.JLabel();
         lbtt3 = new javax.swing.JLabel();
@@ -56,15 +60,47 @@ public class JFLVenta extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 112, 36)), javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 112, 36))));
 
+        lbtt4.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        lbtt4.setForeground(new java.awt.Color(0, 0, 0));
+        lbtt4.setText("Ventas");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Codigo de Venta", "Empleado", "Cliente", "Valor Venta", "Fecha Venta"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jSeparator1)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbtt4)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 422, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbtt4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         lbtt1.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
@@ -77,7 +113,7 @@ public class JFLVenta extends javax.swing.JFrame {
 
         lbtt3.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         lbtt3.setForeground(new java.awt.Color(0, 0, 0));
-        lbtt3.setText("Registrar Venta");
+        lbtt3.setText("Lista de Venta");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -138,10 +174,14 @@ public class JFLVenta extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbImg;
     private javax.swing.JLabel lbNombre;
     private javax.swing.JLabel lbtt1;
     private javax.swing.JLabel lbtt2;
     private javax.swing.JLabel lbtt3;
+    private javax.swing.JLabel lbtt4;
     // End of variables declaration//GEN-END:variables
 }
