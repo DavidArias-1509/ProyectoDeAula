@@ -469,8 +469,8 @@ public class JFRVenta extends javax.swing.JFrame {
 
     private void jBGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBGuardarMouseClicked
        ExceptionRestaurante excep = new ExceptionRestaurante();
+       DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         try {
-            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             LocalDate fecha = LocalDate.parse(excep.espaciosEnBlancos(this.jTFFecha.getText()), formato);
             Long idEmple = Long.parseLong(excep.espaciosEnBlancos(this.jTFIdEmpleado.getText()));
             String nomEmple = excep.espaciosEnBlancos(this.jTFNombreEmpleado.getText());
@@ -490,6 +490,7 @@ public class JFRVenta extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, ex);
         }catch(java.time.format.DateTimeParseException ex){
             JOptionPane.showMessageDialog(this, "Formato de la Fecha no es valido(dd/mm/aaaa)");
+            this.jTFFecha.setText(LocalDate.now().format(formato).toString());
         }
     }//GEN-LAST:event_jBGuardarMouseClicked
 
