@@ -4,6 +4,8 @@
  */
 package vista;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -198,7 +200,8 @@ public class JFLogIn extends javax.swing.JFrame {
         try {
             if(this.validar()==true){
                 this.setVisible(false);
-                 JFPrincipal window = new JFPrincipal();                
+                 JFPrincipal window = new JFPrincipal(); 
+                 this.dispose();
             }else{
                 JOptionPane.showMessageDialog(null, "Por favor, Verifique el usuario Y la contraseña");
             }
