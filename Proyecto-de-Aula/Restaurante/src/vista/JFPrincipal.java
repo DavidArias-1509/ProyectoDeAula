@@ -40,20 +40,16 @@ public class JFPrincipal extends javax.swing.JFrame {
         lbNombre = new javax.swing.JLabel();
         lbImg = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        pCompra = new javax.swing.JPanel();
-        lbcompra = new javax.swing.JLabel();
-        pInventario = new javax.swing.JPanel();
-        lbInventario = new javax.swing.JLabel();
-        pVenta = new javax.swing.JPanel();
-        lbVenta = new javax.swing.JLabel();
-        pAsistencia = new javax.swing.JPanel();
-        lbAsistencia = new javax.swing.JLabel();
-        pBalance = new javax.swing.JPanel();
-        lbBalance = new javax.swing.JLabel();
-        pFunciones = new javax.swing.JPanel();
-        lbFunciones = new javax.swing.JLabel();
-        pPersistir = new javax.swing.JPanel();
-        lbPersistir = new javax.swing.JLabel();
+        pListaPlatos = new javax.swing.JPanel();
+        lbListaPlatos = new javax.swing.JLabel();
+        pRegistrarVenta = new javax.swing.JPanel();
+        lbRegistrarVenta = new javax.swing.JLabel();
+        pRegistrarPlato = new javax.swing.JPanel();
+        lbRegistrarPlato = new javax.swing.JLabel();
+        pListaVentas = new javax.swing.JPanel();
+        lbListaVentas = new javax.swing.JLabel();
+        pBuscarVenta = new javax.swing.JPanel();
+        lbBuscarVenta = new javax.swing.JLabel();
         lbtt1 = new javax.swing.JLabel();
         lbtt2 = new javax.swing.JLabel();
 
@@ -96,233 +92,169 @@ public class JFPrincipal extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 112, 36)), javax.swing.BorderFactory.createLineBorder(new java.awt.Color(232, 112, 36))));
 
-        pCompra.setBackground(new java.awt.Color(255, 255, 255));
-        pCompra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pCompra.addMouseListener(new java.awt.event.MouseAdapter() {
+        pListaPlatos.setBackground(new java.awt.Color(255, 255, 255));
+        pListaPlatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pListaPlatos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pCompraMouseEntered(evt);
+                pListaPlatosMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                pCompraMouseExited(evt);
+                pListaPlatosMouseExited(evt);
             }
         });
 
-        lbcompra.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        lbcompra.setForeground(java.awt.Color.black);
-        lbcompra.setText("Registrar Compra ");
-        lbcompra.setPreferredSize(new java.awt.Dimension(119, 38));
+        lbListaPlatos.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        lbListaPlatos.setForeground(java.awt.Color.black);
+        lbListaPlatos.setText("Ver Lista de Platos");
+        lbListaPlatos.setPreferredSize(new java.awt.Dimension(119, 38));
 
-        javax.swing.GroupLayout pCompraLayout = new javax.swing.GroupLayout(pCompra);
-        pCompra.setLayout(pCompraLayout);
-        pCompraLayout.setHorizontalGroup(
-            pCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pCompraLayout.createSequentialGroup()
+        javax.swing.GroupLayout pListaPlatosLayout = new javax.swing.GroupLayout(pListaPlatos);
+        pListaPlatos.setLayout(pListaPlatosLayout);
+        pListaPlatosLayout.setHorizontalGroup(
+            pListaPlatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pListaPlatosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbcompra, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbListaPlatos, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        pCompraLayout.setVerticalGroup(
-            pCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pCompraLayout.createSequentialGroup()
-                .addComponent(lbcompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        pListaPlatosLayout.setVerticalGroup(
+            pListaPlatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pListaPlatosLayout.createSequentialGroup()
+                .addComponent(lbListaPlatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pInventario.setBackground(new java.awt.Color(255, 255, 255));
-        pInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pInventario.setMaximumSize(new java.awt.Dimension(181, 19));
-        pInventario.setPreferredSize(new java.awt.Dimension(119, 38));
-        pInventario.addMouseListener(new java.awt.event.MouseAdapter() {
+        pRegistrarVenta.setBackground(new java.awt.Color(255, 255, 255));
+        pRegistrarVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pRegistrarVenta.setMaximumSize(new java.awt.Dimension(181, 19));
+        pRegistrarVenta.setPreferredSize(new java.awt.Dimension(119, 38));
+        pRegistrarVenta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pInventarioMouseClicked(evt);
+                pRegistrarVentaMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pInventarioMouseEntered(evt);
+                pRegistrarVentaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                pInventarioMouseExited(evt);
+                pRegistrarVentaMouseExited(evt);
             }
         });
 
-        lbInventario.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        lbInventario.setForeground(new java.awt.Color(0, 0, 0));
-        lbInventario.setText("Inventario");
+        lbRegistrarVenta.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        lbRegistrarVenta.setForeground(new java.awt.Color(0, 0, 0));
+        lbRegistrarVenta.setText("Registrar Venta");
 
-        javax.swing.GroupLayout pInventarioLayout = new javax.swing.GroupLayout(pInventario);
-        pInventario.setLayout(pInventarioLayout);
-        pInventarioLayout.setHorizontalGroup(
-            pInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pInventarioLayout.createSequentialGroup()
+        javax.swing.GroupLayout pRegistrarVentaLayout = new javax.swing.GroupLayout(pRegistrarVenta);
+        pRegistrarVenta.setLayout(pRegistrarVentaLayout);
+        pRegistrarVentaLayout.setHorizontalGroup(
+            pRegistrarVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pRegistrarVentaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbInventario)
+                .addComponent(lbRegistrarVenta)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        pInventarioLayout.setVerticalGroup(
-            pInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pInventarioLayout.createSequentialGroup()
+        pRegistrarVentaLayout.setVerticalGroup(
+            pRegistrarVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pRegistrarVentaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbInventario)
+                .addComponent(lbRegistrarVenta)
                 .addContainerGap(7, Short.MAX_VALUE))
         );
 
-        pVenta.setBackground(new java.awt.Color(255, 255, 255));
-        pVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pVenta.setPreferredSize(new java.awt.Dimension(119, 38));
-        pVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+        pRegistrarPlato.setBackground(new java.awt.Color(255, 255, 255));
+        pRegistrarPlato.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pRegistrarPlato.setPreferredSize(new java.awt.Dimension(119, 38));
+        pRegistrarPlato.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pVentaMouseEntered(evt);
+                pRegistrarPlatoMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                pVentaMouseExited(evt);
+                pRegistrarPlatoMouseExited(evt);
             }
         });
 
-        lbVenta.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        lbVenta.setForeground(new java.awt.Color(0, 0, 0));
-        lbVenta.setText("Registrar venta");
+        lbRegistrarPlato.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        lbRegistrarPlato.setForeground(new java.awt.Color(0, 0, 0));
+        lbRegistrarPlato.setText("Registrar Plato");
 
-        javax.swing.GroupLayout pVentaLayout = new javax.swing.GroupLayout(pVenta);
-        pVenta.setLayout(pVentaLayout);
-        pVentaLayout.setHorizontalGroup(
-            pVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pVentaLayout.createSequentialGroup()
+        javax.swing.GroupLayout pRegistrarPlatoLayout = new javax.swing.GroupLayout(pRegistrarPlato);
+        pRegistrarPlato.setLayout(pRegistrarPlatoLayout);
+        pRegistrarPlatoLayout.setHorizontalGroup(
+            pRegistrarPlatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pRegistrarPlatoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbVenta)
+                .addComponent(lbRegistrarPlato)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        pVentaLayout.setVerticalGroup(
-            pVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pVentaLayout.createSequentialGroup()
+        pRegistrarPlatoLayout.setVerticalGroup(
+            pRegistrarPlatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pRegistrarPlatoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbVenta)
+                .addComponent(lbRegistrarPlato)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pAsistencia.setBackground(new java.awt.Color(255, 255, 255));
-        pAsistencia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pAsistencia.addMouseListener(new java.awt.event.MouseAdapter() {
+        pListaVentas.setBackground(new java.awt.Color(255, 255, 255));
+        pListaVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pListaVentas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pAsistenciaMouseEntered(evt);
+                pListaVentasMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                pAsistenciaMouseExited(evt);
+                pListaVentasMouseExited(evt);
             }
         });
 
-        lbAsistencia.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        lbAsistencia.setForeground(java.awt.Color.black);
-        lbAsistencia.setText("Registrar Asistencia");
-        lbAsistencia.setPreferredSize(new java.awt.Dimension(119, 38));
+        lbListaVentas.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        lbListaVentas.setForeground(java.awt.Color.black);
+        lbListaVentas.setText("Ver Lista de Ventas");
+        lbListaVentas.setPreferredSize(new java.awt.Dimension(119, 38));
 
-        javax.swing.GroupLayout pAsistenciaLayout = new javax.swing.GroupLayout(pAsistencia);
-        pAsistencia.setLayout(pAsistenciaLayout);
-        pAsistenciaLayout.setHorizontalGroup(
-            pAsistenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pAsistenciaLayout.createSequentialGroup()
+        javax.swing.GroupLayout pListaVentasLayout = new javax.swing.GroupLayout(pListaVentas);
+        pListaVentas.setLayout(pListaVentasLayout);
+        pListaVentasLayout.setHorizontalGroup(
+            pListaVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pListaVentasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lbListaVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(277, Short.MAX_VALUE))
         );
-        pAsistenciaLayout.setVerticalGroup(
-            pAsistenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pAsistenciaLayout.createSequentialGroup()
-                .addComponent(lbAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        pListaVentasLayout.setVerticalGroup(
+            pListaVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pListaVentasLayout.createSequentialGroup()
+                .addComponent(lbListaVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pBalance.setBackground(new java.awt.Color(255, 255, 255));
-        pBalance.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pBalance.addMouseListener(new java.awt.event.MouseAdapter() {
+        pBuscarVenta.setBackground(new java.awt.Color(255, 255, 255));
+        pBuscarVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pBuscarVenta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pBalanceMouseEntered(evt);
+                pBuscarVentaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                pBalanceMouseExited(evt);
+                pBuscarVentaMouseExited(evt);
             }
         });
 
-        lbBalance.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        lbBalance.setForeground(java.awt.Color.black);
-        lbBalance.setText("Opciones de Balance");
-        lbBalance.setPreferredSize(new java.awt.Dimension(119, 38));
+        lbBuscarVenta.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        lbBuscarVenta.setForeground(java.awt.Color.black);
+        lbBuscarVenta.setText("Buscar Venta");
+        lbBuscarVenta.setPreferredSize(new java.awt.Dimension(119, 38));
 
-        javax.swing.GroupLayout pBalanceLayout = new javax.swing.GroupLayout(pBalance);
-        pBalance.setLayout(pBalanceLayout);
-        pBalanceLayout.setHorizontalGroup(
-            pBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pBalanceLayout.createSequentialGroup()
+        javax.swing.GroupLayout pBuscarVentaLayout = new javax.swing.GroupLayout(pBuscarVenta);
+        pBuscarVenta.setLayout(pBuscarVentaLayout);
+        pBuscarVentaLayout.setHorizontalGroup(
+            pBuscarVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pBuscarVentaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbBuscarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        pBalanceLayout.setVerticalGroup(
-            pBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pBalanceLayout.createSequentialGroup()
-                .addComponent(lbBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        pFunciones.setBackground(new java.awt.Color(255, 255, 255));
-        pFunciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pFunciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pFuncionesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pFuncionesMouseExited(evt);
-            }
-        });
-
-        lbFunciones.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        lbFunciones.setForeground(java.awt.Color.black);
-        lbFunciones.setText("Funciones Especiales (Admin)");
-        lbFunciones.setPreferredSize(new java.awt.Dimension(119, 38));
-
-        javax.swing.GroupLayout pFuncionesLayout = new javax.swing.GroupLayout(pFunciones);
-        pFunciones.setLayout(pFuncionesLayout);
-        pFuncionesLayout.setHorizontalGroup(
-            pFuncionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pFuncionesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbFunciones, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pFuncionesLayout.setVerticalGroup(
-            pFuncionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pFuncionesLayout.createSequentialGroup()
-                .addComponent(lbFunciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        pPersistir.setBackground(new java.awt.Color(255, 255, 255));
-        pPersistir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pPersistir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pPersistirMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pPersistirMouseExited(evt);
-            }
-        });
-
-        lbPersistir.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        lbPersistir.setForeground(java.awt.Color.black);
-        lbPersistir.setText("Persistir Información");
-        lbPersistir.setPreferredSize(new java.awt.Dimension(119, 38));
-
-        javax.swing.GroupLayout pPersistirLayout = new javax.swing.GroupLayout(pPersistir);
-        pPersistir.setLayout(pPersistirLayout);
-        pPersistirLayout.setHorizontalGroup(
-            pPersistirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pPersistirLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbPersistir, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pPersistirLayout.setVerticalGroup(
-            pPersistirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pPersistirLayout.createSequentialGroup()
-                .addComponent(lbPersistir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        pBuscarVentaLayout.setVerticalGroup(
+            pBuscarVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pBuscarVentaLayout.createSequentialGroup()
+                .addComponent(lbBuscarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -330,32 +262,26 @@ public class JFPrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pInventario, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
-            .addComponent(pVenta, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
-            .addComponent(pCompra, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pAsistencia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pBalance, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pFunciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pPersistir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pRegistrarVenta, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
+            .addComponent(pRegistrarPlato, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
+            .addComponent(pListaPlatos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pListaVentas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pBuscarVenta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pRegistrarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pRegistrarPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pListaPlatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pListaVentas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pFunciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pPersistir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addComponent(pBuscarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(484, Short.MAX_VALUE))
         );
 
         lbtt1.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
@@ -411,93 +337,69 @@ public class JFPrincipal extends javax.swing.JFrame {
     public Font font = new Font("Lucida Console", Font.BOLD, 18);
     public Font font2 = new Font("Lucida Console", Font.PLAIN, 18);
     
-    private void pCompraMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCompraMouseEntered
-        this.pCompra.setBackground(new Color(232,112,36));
-        this.lbcompra.setForeground(Color.white);
-        this.lbcompra.setFont(font);
-    }//GEN-LAST:event_pCompraMouseEntered
+    private void pListaPlatosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pListaPlatosMouseEntered
+        this.pListaPlatos.setBackground(new Color(232,112,36));
+        this.lbListaPlatos.setForeground(Color.white);
+        this.lbListaPlatos.setFont(font);
+    }//GEN-LAST:event_pListaPlatosMouseEntered
 
-    private void pCompraMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCompraMouseExited
-        this.pCompra.setBackground(Color.white);
-        this.lbcompra.setForeground(Color.black);
-        this.lbcompra.setFont(font2);
-    }//GEN-LAST:event_pCompraMouseExited
+    private void pListaPlatosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pListaPlatosMouseExited
+        this.pListaPlatos.setBackground(Color.white);
+        this.lbListaPlatos.setForeground(Color.black);
+        this.lbListaPlatos.setFont(font2);
+    }//GEN-LAST:event_pListaPlatosMouseExited
 
-    private void pInventarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pInventarioMouseEntered
-        this.pInventario.setBackground(new Color(232,112,36));
-        this.lbInventario.setForeground(Color.white);
-        this.lbInventario.setFont(font);
-    }//GEN-LAST:event_pInventarioMouseEntered
+    private void pRegistrarVentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pRegistrarVentaMouseEntered
+        this.pRegistrarVenta.setBackground(new Color(232,112,36));
+        this.lbRegistrarVenta.setForeground(Color.white);
+        this.lbRegistrarVenta.setFont(font);
+    }//GEN-LAST:event_pRegistrarVentaMouseEntered
 
-    private void pInventarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pInventarioMouseExited
-        this.pInventario.setBackground(Color.white);
-         this.lbInventario.setForeground(Color.black);
-        this.lbInventario.setFont(font2);
-    }//GEN-LAST:event_pInventarioMouseExited
+    private void pRegistrarVentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pRegistrarVentaMouseExited
+        this.pRegistrarVenta.setBackground(Color.white);
+         this.lbRegistrarVenta.setForeground(Color.black);
+        this.lbRegistrarVenta.setFont(font2);
+    }//GEN-LAST:event_pRegistrarVentaMouseExited
 
-    private void pVentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pVentaMouseEntered
-        this.pVenta.setBackground(new Color(232,112,36));
-        this.lbVenta.setForeground(Color.white);
-        this.lbVenta.setFont(font);
-    }//GEN-LAST:event_pVentaMouseEntered
+    private void pRegistrarPlatoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pRegistrarPlatoMouseEntered
+        this.pRegistrarPlato.setBackground(new Color(232,112,36));
+        this.lbRegistrarPlato.setForeground(Color.white);
+        this.lbRegistrarPlato.setFont(font);
+    }//GEN-LAST:event_pRegistrarPlatoMouseEntered
 
-    private void pVentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pVentaMouseExited
-        this.pVenta.setBackground(Color.white);
-        this.lbVenta.setForeground(Color.black);
-        this.lbVenta.setFont(font2);
-    }//GEN-LAST:event_pVentaMouseExited
+    private void pRegistrarPlatoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pRegistrarPlatoMouseExited
+        this.pRegistrarPlato.setBackground(Color.white);
+        this.lbRegistrarPlato.setForeground(Color.black);
+        this.lbRegistrarPlato.setFont(font2);
+    }//GEN-LAST:event_pRegistrarPlatoMouseExited
 
-    private void pAsistenciaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pAsistenciaMouseEntered
-        this.pAsistencia.setBackground(new Color(232,112,36));
-        this.lbAsistencia.setForeground(Color.white);
-        this.lbAsistencia.setFont(font);
-    }//GEN-LAST:event_pAsistenciaMouseEntered
+    private void pListaVentasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pListaVentasMouseEntered
+        this.pListaVentas.setBackground(new Color(232,112,36));
+        this.lbListaVentas.setForeground(Color.white);
+        this.lbListaVentas.setFont(font);
+    }//GEN-LAST:event_pListaVentasMouseEntered
 
-    private void pAsistenciaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pAsistenciaMouseExited
-        this.pAsistencia.setBackground(Color.WHITE);
-        this.lbAsistencia.setForeground(Color.black);
-        this.lbAsistencia.setFont(font2);
-    }//GEN-LAST:event_pAsistenciaMouseExited
+    private void pListaVentasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pListaVentasMouseExited
+        this.pListaVentas.setBackground(Color.WHITE);
+        this.lbListaVentas.setForeground(Color.black);
+        this.lbListaVentas.setFont(font2);
+    }//GEN-LAST:event_pListaVentasMouseExited
 
-    private void pBalanceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pBalanceMouseEntered
-        this.pBalance.setBackground(new Color(232,112,36));
-        this.lbBalance.setForeground(Color.white);
-        this.lbBalance.setFont(font);
-    }//GEN-LAST:event_pBalanceMouseEntered
+    private void pBuscarVentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pBuscarVentaMouseEntered
+        this.pBuscarVenta.setBackground(new Color(232,112,36));
+        this.lbBuscarVenta.setForeground(Color.white);
+        this.lbBuscarVenta.setFont(font);
+    }//GEN-LAST:event_pBuscarVentaMouseEntered
 
-    private void pBalanceMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pBalanceMouseExited
-        this.pBalance.setBackground(Color.white);
-         this.lbBalance.setForeground(Color.black);
-        this.lbBalance.setFont(font2);
-    }//GEN-LAST:event_pBalanceMouseExited
+    private void pBuscarVentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pBuscarVentaMouseExited
+        this.pBuscarVenta.setBackground(Color.white);
+         this.lbBuscarVenta.setForeground(Color.black);
+        this.lbBuscarVenta.setFont(font2);
+    }//GEN-LAST:event_pBuscarVentaMouseExited
 
-    private void pFuncionesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pFuncionesMouseEntered
-        this.pFunciones.setBackground(new Color(232,112,36));
-        this.lbFunciones.setForeground(Color.white);
-        this.lbFunciones.setFont(font);
-    }//GEN-LAST:event_pFuncionesMouseEntered
-
-    private void pFuncionesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pFuncionesMouseExited
-        this.pFunciones.setBackground(Color.WHITE);
-        this.lbFunciones.setForeground(Color.black);
-        this.lbFunciones.setFont(font2);
-    }//GEN-LAST:event_pFuncionesMouseExited
-
-    private void pPersistirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pPersistirMouseEntered
-        this.pPersistir.setBackground(new Color(232,112,36));
-        this.lbPersistir.setForeground(Color.white);
-        this.lbPersistir.setFont(font);
-    }//GEN-LAST:event_pPersistirMouseEntered
-
-    private void pPersistirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pPersistirMouseExited
-        this.pPersistir.setBackground(Color.white);
-        this.lbPersistir.setForeground(Color.black);
-        this.lbPersistir.setFont(font2);
-    }//GEN-LAST:event_pPersistirMouseExited
-
-    private void pInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pInventarioMouseClicked
+    private void pRegistrarVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pRegistrarVentaMouseClicked
         JOptionPane.showConfirmDialog(null, "Undeveloped Function", "Funciona",  JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_pInventarioMouseClicked
+    }//GEN-LAST:event_pRegistrarVentaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -517,23 +419,19 @@ public class JFPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JLabel lbAsistencia;
-    private javax.swing.JLabel lbBalance;
-    private javax.swing.JLabel lbFunciones;
+    private javax.swing.JLabel lbBuscarVenta;
     private javax.swing.JLabel lbImg;
-    private javax.swing.JLabel lbInventario;
+    private javax.swing.JLabel lbListaPlatos;
+    private javax.swing.JLabel lbListaVentas;
     private javax.swing.JLabel lbNombre;
-    private javax.swing.JLabel lbPersistir;
-    private javax.swing.JLabel lbVenta;
-    private javax.swing.JLabel lbcompra;
+    private javax.swing.JLabel lbRegistrarPlato;
+    private javax.swing.JLabel lbRegistrarVenta;
     private javax.swing.JLabel lbtt1;
     private javax.swing.JLabel lbtt2;
-    private javax.swing.JPanel pAsistencia;
-    private javax.swing.JPanel pBalance;
-    private javax.swing.JPanel pCompra;
-    private javax.swing.JPanel pFunciones;
-    private javax.swing.JPanel pInventario;
-    private javax.swing.JPanel pPersistir;
-    private javax.swing.JPanel pVenta;
+    private javax.swing.JPanel pBuscarVenta;
+    private javax.swing.JPanel pListaPlatos;
+    private javax.swing.JPanel pListaVentas;
+    private javax.swing.JPanel pRegistrarPlato;
+    private javax.swing.JPanel pRegistrarVenta;
     // End of variables declaration//GEN-END:variables
 }
