@@ -7,6 +7,7 @@ package vista;
 public class Main_Principal {
     
     public static void main(String[] args) {
-        JFPrincipal window = new JFPrincipal();
+        JFLogIn login = new JFLogIn();
+//        JFPrincipal window = new JFPrincipal();
     }
 }
