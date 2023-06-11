@@ -470,6 +470,9 @@ public class JFRVenta extends javax.swing.JFrame {
        ExceptionRestaurante excep = new ExceptionRestaurante();
        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         try {
+            if(v.getPlatos().size()<=0){
+                throw new IOException("Se debe agregar almenos un plato");
+            }
             LocalDate fecha = LocalDate.parse(excep.espaciosEnBlancos(this.jTFFecha.getText()), formato);
             Long idEmple = Long.parseLong(excep.espaciosEnBlancos(this.jTFIdEmpleado.getText()));
             String nomEmple = excep.espaciosEnBlancos(this.jTFNombreEmpleado.getText());
