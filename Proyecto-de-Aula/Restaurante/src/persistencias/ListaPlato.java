@@ -4,12 +4,12 @@
  */
 package persistencias;
 
-import cuentas.Producto;
+
+import cuentas.Plato;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import preparaciones.Receta;
 
 /**
  *
@@ -17,51 +17,29 @@ import preparaciones.Receta;
  */
 public class ListaPlato implements Logica , Serializable{
     
-    private List<Receta> plato;
+    private List<Plato> plato;
 
     public ListaPlato() {
         this.plato = new ArrayList();
     }
-    
+
     @Override
-    public Receta buscarItem(String id) {
-        for (Receta p : this.plato){
-            if(p.getNombre().equals(id)){
-                return p;
-            }
-        }
-        return null;
+    public Object buscarItem(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public void borrarItem(String id) throws IOException {
-        for(Receta p : this.plato){
-            if(p.getNombre().equals(id)){
-                this.plato.remove(p);
-            }
-        }
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    /**
-     *
-     * @param item
-     * @throws IOException
-     */
     @Override
     public void agregarItem(Object item) throws IOException {
-        Receta p = (Receta) item;
-        for (Receta p1 :this.plato){
-            if(p.getNombre().equals(p1.getNombre())){
-                throw new IOException("Plato ya existe en menu");
-            }
-        }
-        this.plato.add(p);
-        
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public List<Receta> generarInforme() throws IOException {
-        return this.plato;
+    public List generarInforme() throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
 }

@@ -4,94 +4,87 @@ import java.time.LocalDate;
 import modelos.Entrada;
 import java.util.ArrayList;
 import empleados.Empleado;
-import preparaciones.Receta;
 
 public class Venta {
     private String codigoVenta;
-    private ArrayList<Receta> platos;
+    private ArrayList<Plato> platos;
     private LocalDate fechaVenta;
     private Empleado empleado;
-    private Cliente cliente;
     private double precioVenta;
 
-    public Venta(Empleado empleado, Cliente cliente) {
-        this.empleado = empleado;
-        this.cliente = cliente;
-    }
-    
-    public ArrayList<Receta> getPlatos() {
-        return platos;
+    public Venta() {
+        
     }
 
-    public Empleado getEmpleado() {
-        return empleado;   
-    }
-
-    public void setPlatos(ArrayList<Receta> platos) {
-        this.platos = platos;
-    }
-    
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
-    }
-    
-    public void agregarPlato(Receta r){
-        double valor=0;
-        this.platos.add(r);
-        for(Receta R: this.platos){
-           valor+= R.calcularPrecio();
-        }
-        this.precioVenta = valor;
-    }
-    
-    public double calcularPrecio(){
-        double total=0;
-        for(Receta r : this.platos){
-           total+=r.calcularPrecio();
-        }
-        return total;
-    }
-    
-    public void realizarVenta(){
-        this.calcularPrecio();
-    }
-
+    /**
+     * @return the codigoVenta
+     */
     public String getCodigoVenta() {
         return codigoVenta;
     }
 
-    public LocalDate getFechaVenta() {
-        return fechaVenta;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public double getPrecioVenta() {
-        return precioVenta;
-    }
-
+    /**
+     * @param codigoVenta the codigoVenta to set
+     */
     public void setCodigoVenta(String codigoVenta) {
         this.codigoVenta = codigoVenta;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    /**
+     * @return the platos
+     */
+    public ArrayList<Plato> getPlatos() {
+        return platos;
+    }
+
+    /**
+     * @param platos the platos to set
+     */
+    public void setPlatos(ArrayList<Plato> platos) {
+        this.platos = platos;
+    }
+
+    /**
+     * @return the fechaVenta
+     */
+    public LocalDate getFechaVenta() {
+        return fechaVenta;
+    }
+
+    /**
+     * @param fechaVenta the fechaVenta to set
+     */
+    public void setFechaVenta(LocalDate fechaVenta) {
+        this.fechaVenta = fechaVenta;
+    }
+
+    /**
+     * @return the empleado
+     */
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    /**
+     * @param empleado the empleado to set
+     */
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
+
+    /**
+     * @return the precioVenta
+     */
+    public double getPrecioVenta() {
+        return precioVenta;
+    }
+
+    /**
+     * @param precioVenta the precioVenta to set
+     */
+    public void setPrecioVenta(double precioVenta) {
+        this.precioVenta = precioVenta;
     }
     
-    public void detalle(){
-        System.out.println("-Empleado");
-        System.out.println("Nombre: "+empleado.getNombre());
-        System.out.println("Identificacion: "+empleado.getIdentificacion());
-        System.out.println("-Cliente");
-        System.out.println("Nombre: "+cliente.getNombre());
-        System.out.println("Identificacion: "+cliente.getId());
-        System.out.println("E-mail: "+cliente.getE_mail());
-        System.out.println("-Platos");
-        for(Receta r : this.platos){
-            System.out.println(r);
-        }
-        System.out.println("\nTotal Venta: "+this.calcularPrecio());
-    }
+    
 }

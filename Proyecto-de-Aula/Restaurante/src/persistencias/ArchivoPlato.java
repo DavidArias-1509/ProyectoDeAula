@@ -4,13 +4,13 @@
  */
 package persistencias;
 
+import cuentas.Plato;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
-import preparaciones.Receta;
 
 /**
  *
@@ -63,10 +63,10 @@ public class ArchivoPlato extends Archivo {
     }
     
     @Override
-    public Receta buscarItem(String id) {
+    public Plato buscarItem(String id) {
         try {
             this.leerListaPlato();
-            return this.list.buscarItem(id);
+            //return this.list.buscarItem(id);
         } catch (IOException ex) {
             System.err.println("Erro: "+ ex);
         }
@@ -88,7 +88,7 @@ public class ArchivoPlato extends Archivo {
     }
 
     @Override
-    public List<Receta> generarInforme() throws IOException {
+    public List<Plato> generarInforme() throws IOException {
        this.leerListaPlato();
        return this.list.generarInforme();
     }
