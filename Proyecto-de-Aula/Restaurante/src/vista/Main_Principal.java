@@ -97,7 +97,7 @@ public class Main_Principal {
         //ejecucionPrincipal();
         
         //JFPrincipal ejecucion = new JFPrincipal();
-        VentanaPrincipal window = new VentanaPrincipal("La Góndola");
+        JFPrincipal window = new JFPrincipal();
     }
     
     public static void ejecucionPrincipal() throws IOException{
