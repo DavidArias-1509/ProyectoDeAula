@@ -1,5 +1,6 @@
 package vista;
 
+import cuentas.Plato;
 import cuentas.Venta;
 import java.awt.Color;
 import java.awt.Font;
@@ -7,24 +8,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import persistencias.ArchivoPlato;
 import persistencias.ArchivoVenta;
 import persistencias.Logica;
 
-public class JFLVenta extends javax.swing.JFrame {
+public class JFLPlato extends javax.swing.JFrame {
 
-    public JFLVenta() throws IOException {
+    public JFLPlato() throws IOException {
         initComponents();
-        this.iniciarVenta();
+        this.iniciarPlato();
     }
     
-    public void iniciarVenta() throws IOException{
-        Logica venta = new ArchivoVenta();
-        List<Venta> list = venta.generarInforme();
+    public void iniciarPlato() throws IOException{
+        Logica plato = new ArchivoPlato();
+        List<Plato> list = plato.generarInforme();
         int i = 1;
-        for(Venta v : list){
-            TblVenta.setValueAt(v.getCodigoVenta(), i, 1);
-            TblVenta.setValueAt(v.getPrecioVenta(), i, 2);
-            TblVenta.setValueAt(v.getFechaVenta(), i, 3);
+        for(Plato p : list){
+            TblPlato.setValueAt(p.getCodigo(), i, 1);
+            TblPlato.setValueAt(p.getNombre(), i, 2);
+            TblPlato.setValueAt(p.getPrecio(), i, 3);
             i++;
         }
     }
@@ -41,7 +43,7 @@ public class JFLVenta extends javax.swing.JFrame {
         lbtt4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TblVenta = new javax.swing.JTable();
+        TblPlato = new javax.swing.JTable();
         lbtt1 = new javax.swing.JLabel();
         lbtt2 = new javax.swing.JLabel();
         lbtt3 = new javax.swing.JLabel();
@@ -81,9 +83,9 @@ public class JFLVenta extends javax.swing.JFrame {
 
         lbtt4.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         lbtt4.setForeground(new java.awt.Color(0, 0, 0));
-        lbtt4.setText("Ventas");
+        lbtt4.setText("Platos");
 
-        TblVenta.setModel(new javax.swing.table.DefaultTableModel(
+        TblPlato.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -91,10 +93,10 @@ public class JFLVenta extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Co. de Venta", "Valor Venta", "Fecha Venta"
+                "Co. de Plato", "Nombre", "P. Plato"
             }
         ));
-        jScrollPane1.setViewportView(TblVenta);
+        jScrollPane1.setViewportView(TblPlato);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -132,7 +134,7 @@ public class JFLVenta extends javax.swing.JFrame {
 
         lbtt3.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         lbtt3.setForeground(new java.awt.Color(0, 0, 0));
-        lbtt3.setText("Lista de Venta");
+        lbtt3.setText("Lista de Plato");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -190,7 +192,7 @@ public class JFLVenta extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TblVenta;
+    private javax.swing.JTable TblPlato;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
