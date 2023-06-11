@@ -46,6 +46,9 @@ public class JFRVenta extends javax.swing.JFrame {
         jTFNombreCliente = new javax.swing.JTextField();
         jTFEmail = new javax.swing.JTextField();
         jLBValortotal = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
         lbtt1 = new javax.swing.JLabel();
         lbtt2 = new javax.swing.JLabel();
         lbtt3 = new javax.swing.JLabel();
@@ -135,6 +138,7 @@ public class JFRVenta extends javax.swing.JFrame {
         jLabel11.setText("Valor Total:");
 
         jBaddPlato.setBackground(new java.awt.Color(232, 112, 36));
+        jBaddPlato.setFont(new java.awt.Font("Lucida Console", 0, 12)); // NOI18N
         jBaddPlato.setText("Añadir");
         jBaddPlato.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -143,6 +147,7 @@ public class JFRVenta extends javax.swing.JFrame {
         });
 
         jTFFecha.setBackground(new java.awt.Color(255, 255, 255));
+        jTFFecha.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         jTFFecha.setForeground(new java.awt.Color(51, 51, 51));
         jTFFecha.setText("dd-mm-aaa");
         jTFFecha.setToolTipText("");
@@ -150,6 +155,7 @@ public class JFRVenta extends javax.swing.JFrame {
         jTFFecha.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jBGuardar.setBackground(new java.awt.Color(232, 112, 36));
+        jBGuardar.setFont(new java.awt.Font("Lucida Console", 0, 12)); // NOI18N
         jBGuardar.setText("GUARDAR");
         jBGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -163,6 +169,7 @@ public class JFRVenta extends javax.swing.JFrame {
         });
 
         jBCandelar.setBackground(new java.awt.Color(232, 112, 36));
+        jBCandelar.setFont(new java.awt.Font("Lucida Console", 0, 12)); // NOI18N
         jBCandelar.setText("CANCELAR");
         jBCandelar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -176,6 +183,7 @@ public class JFRVenta extends javax.swing.JFrame {
         });
 
         jTFCodVenta.setBackground(new java.awt.Color(255, 255, 255));
+        jTFCodVenta.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         jTFCodVenta.setForeground(new java.awt.Color(51, 51, 51));
         jTFCodVenta.setText("0");
         jTFCodVenta.setToolTipText("");
@@ -183,30 +191,35 @@ public class JFRVenta extends javax.swing.JFrame {
         jTFCodVenta.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jTFIdEmpleado.setBackground(new java.awt.Color(255, 255, 255));
+        jTFIdEmpleado.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         jTFIdEmpleado.setForeground(new java.awt.Color(51, 51, 51));
         jTFIdEmpleado.setToolTipText("");
         jTFIdEmpleado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFIdEmpleado.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jTFNombreEmpleado.setBackground(new java.awt.Color(255, 255, 255));
+        jTFNombreEmpleado.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         jTFNombreEmpleado.setForeground(new java.awt.Color(51, 51, 51));
         jTFNombreEmpleado.setToolTipText("");
         jTFNombreEmpleado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFNombreEmpleado.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jTFIdCliente.setBackground(new java.awt.Color(255, 255, 255));
+        jTFIdCliente.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         jTFIdCliente.setForeground(new java.awt.Color(51, 51, 51));
         jTFIdCliente.setToolTipText("");
         jTFIdCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFIdCliente.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jTFNombreCliente.setBackground(new java.awt.Color(255, 255, 255));
+        jTFNombreCliente.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         jTFNombreCliente.setForeground(new java.awt.Color(51, 51, 51));
         jTFNombreCliente.setToolTipText("");
         jTFNombreCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTFNombreCliente.setCaretColor(new java.awt.Color(0, 0, 0));
 
         jTFEmail.setBackground(new java.awt.Color(255, 255, 255));
+        jTFEmail.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         jTFEmail.setForeground(new java.awt.Color(51, 51, 51));
         jTFEmail.setText("example@mail.com");
         jTFEmail.setToolTipText("");
@@ -215,6 +228,12 @@ public class JFRVenta extends javax.swing.JFrame {
 
         jLBValortotal.setForeground(new java.awt.Color(0, 0, 0));
         jLBValortotal.setText("0");
+
+        jSeparator1.setForeground(new java.awt.Color(232, 112, 36));
+
+        jSeparator2.setForeground(new java.awt.Color(232, 112, 36));
+
+        jSeparator3.setForeground(new java.awt.Color(232, 112, 36));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -274,6 +293,12 @@ public class JFRVenta extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTFIdEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,7 +311,9 @@ public class JFRVenta extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTFCodVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -296,7 +323,9 @@ public class JFRVenta extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jTFNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                .addGap(5, 5, 5)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -310,7 +339,9 @@ public class JFRVenta extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jTFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jBaddPlato)
@@ -345,13 +376,11 @@ public class JFRVenta extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbtt2)
-                            .addComponent(lbtt3)
-                            .addComponent(lbtt1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(lbtt2)
+                    .addComponent(lbtt3)
+                    .addComponent(lbtt1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,13 +403,13 @@ public class JFRVenta extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -431,6 +460,9 @@ public class JFRVenta extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField jTFCodVenta;
     private javax.swing.JTextField jTFEmail;
     private javax.swing.JTextField jTFFecha;
