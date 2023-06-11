@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import modelos.Entrada;
 import static modelos.Entrada.leerFecha;
 import empleados.Administrador;
-import empleados.Empleado;
+import empleados.Persona;
 import java.io.IOException;
 import java.io.Serializable;
 import persistencias.*;

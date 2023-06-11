@@ -1,10 +1,10 @@
 package empleados;
 
-public abstract class Empleado {
+public abstract class Persona {
         private String nombre;
         private long identificacion;
 
-    public Empleado(String nombre, long identificacion) {
+    public Persona(String nombre, long identificacion) {
         this.nombre = nombre;
         this.identificacion = identificacion;
     }

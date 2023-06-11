@@ -1,6 +1,6 @@
 package empleados;
 
-public  class Administrador extends Empleado{
+public  class Administrador extends Persona{
     private double salarioBase;
     private double auxilios;
     private double bonificacion;

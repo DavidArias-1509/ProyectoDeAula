@@ -1,6 +1,6 @@
 package empleados;
 
-public class Normal extends Empleado{
+public class Normal extends Persona{
     private double pagoPorDia;
     private double bonificacion;
     private int diasTrabajados;
