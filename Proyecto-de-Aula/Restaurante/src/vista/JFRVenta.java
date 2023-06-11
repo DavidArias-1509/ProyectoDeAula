@@ -1,14 +1,27 @@
 package vista;
 
+import cuentas.Plato;
 import java.awt.Color;
 import java.awt.Font;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import persistencias.ArchivoPlato;
+import persistencias.ArchivoVenta;
+import persistencias.Logica;
 
 public class JFRVenta extends javax.swing.JFrame {
+    
+    private Logica plato;
+    private Logica venta;
+    private JFRPlato rPlato;
 
     public JFRVenta() {
         initComponents();
+        this.plato= new ArchivoPlato();
+        this.venta = new ArchivoVenta();
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -19,6 +32,8 @@ public class JFRVenta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lbNombre = new javax.swing.JLabel();
@@ -52,6 +67,10 @@ public class JFRVenta extends javax.swing.JFrame {
         lbtt1 = new javax.swing.JLabel();
         lbtt2 = new javax.swing.JLabel();
         lbtt3 = new javax.swing.JLabel();
+
+        jMenu1.setText("jMenu1");
+
+        jMenu2.setText("jMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -417,6 +436,18 @@ public class JFRVenta extends javax.swing.JFrame {
 
     private void jBaddPlatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBaddPlatoMouseClicked
         JOptionPane.showMessageDialog(null, "Agrege un plato");
+        String nombre = JOptionPane.showInputDialog("Ingrese Codigo del plato");
+        Plato p = (Plato) plato.buscarItem(nombre);
+        if( p == null){
+            try {
+               int resultado = JOptionPane.showConfirmDialog(this, "Plato no existe, desea ir a agregarlo?","Error busqueda",JOptionPane.YES_NO_OPTION);
+               if(resultado == JOptionPane.YES_OPTION){
+                   this.rPlato = new JFRPlato();
+               }
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this, ex);
+            }
+        }
     }//GEN-LAST:event_jBaddPlatoMouseClicked
 
     private void jBGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBGuardarMouseClicked
@@ -457,6 +488,8 @@ public class JFRVenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
