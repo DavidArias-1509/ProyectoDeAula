@@ -197,8 +197,9 @@ public class JFLogIn extends javax.swing.JFrame {
     private void JBIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBIngresarMouseClicked
         try {
             if(this.validar()==true){
-                 JFPrincipal window = new JFPrincipal();
-                
+                 JFPrincipal window = new JFPrincipal();                
+            }else{
+                JOptionPane.showMessageDialog(null, "Por favor, Verifique el usuario Y la contraseña");
             }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Algo esta mal con el usuario o contraseña");
